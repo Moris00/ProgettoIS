@@ -37,6 +37,19 @@ public class CarrelloBean {
 		logger.info("Prodotto "+item.getNome()+" aggiunto al carrello");
 	}
 	
+	public ProductBean searchProduct(String nome) {
+		for(int i = 0; i < listaProdotti.size(); i++) {
+			if(listaProdotti.get(i).getNome().equals(nome)) {
+				return listaProdotti.get(i);
+			}
+		}
+		return null;
+	}
+	
+	public ProductBean getProductByCounter(int a) {
+		return listaProdotti.get(a);
+	}
+	
 	
 	public void addPrice(double a) {prezzoTot += a;}
 	
