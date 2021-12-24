@@ -17,12 +17,12 @@
 		<br>
 		          <h1 align="center">LOGIN</h1>
 			
-			<form name="loginForm" class="form1" action="/Avenue813/LoginServlet" method="POST">
+			<form name="loginForm" class="form1" action="${pageContext.request.contextPath}/login" method="POST">
 			<fieldset class="fields"> 
   		        <legend>Inserisci i tuoi dati</legend> 
 				<div class="login-content">
 					<div class="content">
-						<div class="textbox"><input type="text" name="username" id="username" size=20 id="text" placeholder="Username" onblur="return isValidUsername()"></div>
+						<div class="textbox"><input type="text" name="email" id="email" size=20 id="text" placeholder="Email" onblur=""></div>
 						<p id="error_username"></p>
 						<div class="textbox"><input type="password" name="password" id="password" size=20 id="text" placeholder="Password" onblur="return isValidPassword()"></div>
 						<p id="error_password"></p>

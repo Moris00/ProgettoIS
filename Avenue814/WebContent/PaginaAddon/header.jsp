@@ -34,7 +34,7 @@
 							<div class="colonna1">
 								<div class="logoimg">
 
-									<a href="/Avenue813/PaginaHome/home.jsp"><img  class="logo" src="/Avenue813/immagini/logo_bello.png" width=135px; height=95px;></a>
+									<a href="/Avenue814/PaginaHome/home.jsp"><img  class="logo" src="/Avenue813/immagini/logo_bello.png" width=135px; height=95px;></a>
 
 								</div>
 							</div>
@@ -45,11 +45,11 @@
 									
 									    <ul id="lista"> 
 									    
-										<li><a href="/Avenue813/PaginaHome/home.jsp" class="cool-link">Home</a></li>
-											<li><a href="/Avenue813/PaginaShop/shop.jsp?Sesso=uomo&Category=" class="cool-link">Uomo</a></li>
-											<li><a href="/Avenue813/PaginaShop/shop.jsp?Sesso=donna&Category=" class="cool-link">Donna</a></li>
+										<li><a href="/Avenue814/PaginaHome/home.jsp" class="cool-link">Home</a></li>
+											<li><a href="/Avenue814/PaginaShop/shop.jsp?Sesso=uomo&Category=" class="cool-link">Uomo</a></li>
+											<li><a href="/Avenue814/PaginaShop/shop.jsp?Sesso=donna&Category=" class="cool-link">Donna</a></li>
 											<%if(userSession.getAttribute("username") == null){ %>
-											<li><a href="/Avenue813/PaginaAutenticazione/login.jsp" class="cool-link">Login</a></li>
+											<li><a href="/Avenue814/PaginaAutenticazione/login.jsp" class="cool-link">Login</a></li>
 											<%}else
 											{ %>
 												

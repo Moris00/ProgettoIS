@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>TutoratoSmart</groupId>
+  <artifactId>TutoratoSmart</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <name>TutoratoSmart</name>
+  <description>Applicazione web per la gestione dell'attività di tutorato, sviluppata per il Dipartimento di Psicologia dell'Università degli Studi della Campania Luigi Vanvitelli per il corso di Ingegneria del Software 2019/2020</description>
+  
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+  </properties>
+  
+  <dependencies>
+	  	
+		
+		<!-- JUnit -->
+		<dependency>
+		  	<groupId>org.junit.jupiter</groupId>
+		  	<artifactId>junit-jupiter</artifactId>
+		  	<version>5.5.2</version>
+		</dependency>
+		
+		<!-- MySQL -->
+	    <dependency>
+	      	<groupId>mysql</groupId>
+	      	<artifactId>mysql-connector-java</artifactId>
+	      	<version>8.0.25</version>
+		</dependency>  
+  </dependencies>
+</project>
