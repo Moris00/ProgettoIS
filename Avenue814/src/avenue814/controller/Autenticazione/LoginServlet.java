@@ -2,6 +2,7 @@ package avenue814.controller.Autenticazione;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +14,8 @@ import avenue814.model.*;
 
 public class LoginServlet extends HttpServlet {
 
+	private Logger logger = Logger.getLogger("global");
+	
 	/**
 	 * 
 	 */
@@ -35,9 +38,13 @@ public class LoginServlet extends HttpServlet {
 			
 			UserBean user = userModel.getLogin(email, password);
 			
+			
+			
 			if(user != null) {
+				logger.info("Indirizzamento homepage...");
 				HttpSession userSession = request.getSession();
 				userSession.setAttribute("profilo", user);
+				
 				
 				RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/PaginaHome/home.jsp");
 				dispatcher.forward(request, response);
