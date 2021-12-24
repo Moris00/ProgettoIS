@@ -32,24 +32,24 @@
 
                         <!-- slide images start -->
                         <div class="slide first">
-                        <img src="/Avenue813/immagini/stussy.jpeg" alt="First_Image">
+                        <img src="/Avenue814/IMAGES/stussy.jpeg" alt="First_Image">
                         </div>
 
                         <div class="slide">
 
-                        <img src="/Avenue813/immagini/carhartt.jpeg" alt="Second_Image">
-
-                        </div>
-
-                        <div class="slide">
-
-                        <img src="/Avenue813/immagini/TNF.jpg" alt="Third_Image">
+                        <img src="/Avenue814/IMAGES/carhartt.jpeg" alt="Second_Image">
 
                         </div>
 
                         <div class="slide">
 
-                        <img src="/Avenue813/immagini/nike.jpg" alt="Fourth_Image" >
+                        <img src="/Avenue814/IMAGES/TNF.jpg" alt="Third_Image">
+
+                        </div>
+
+                        <div class="slide">
+
+                        <img src="/Avenue814/IMAGES/nike.jpg" alt="Fourth_Image" >
 
                         </div>
                         <!-- slide images end -->
@@ -102,7 +102,7 @@
 					</div>
 					<div class="immagine">
 						<a href="/Avenue813/PaginaShop/shop.jsp?Sesso=uomo">
-						<img  src="/Avenue813/immagini/korea.jpeg" width ="120%" height="100%"></a>
+						<img  src="/Avenue814/IMAGES/korea.jpeg" width ="120%" height="100%"></a>
 					</div>
 				</div>
 			</div>
@@ -113,8 +113,8 @@
 			<div class="information-content1">
 				<div class="descrizione_image1">
 					<div class="immagine1">
-						<a href="/Avenue813/PaginaShop/shop.jsp?Sesso=donna">
-						<img  src="/Avenue813/immagini/donna.jpeg" width ="70%" height="120%"></a>
+						<a href="/Avenue814/PaginaShop/shop.jsp?Sesso=donna">
+						<img  src="/Avenue814/IMAGES/donna.jpeg" width ="70%" height="120%"></a>
 					</div>
 					<div class="descrizione1">
 						<h2>COLLEZIONE DA DONNA</h2>

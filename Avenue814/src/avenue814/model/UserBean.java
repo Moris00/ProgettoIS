@@ -38,6 +38,10 @@ public class UserBean{
 		this.carrello = new CarrelloBean();
 	}
 	
+	public UserBean() {
+		
+	}
+	
 
 	/**
 	 * @return carrello restituisce il carrello dell'utente

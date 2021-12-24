@@ -48,16 +48,18 @@
 										<li><a href="/Avenue814/PaginaHome/home.jsp" class="cool-link">Home</a></li>
 											<li><a href="/Avenue814/PaginaShop/shop.jsp?Sesso=uomo&Category=" class="cool-link">Uomo</a></li>
 											<li><a href="/Avenue814/PaginaShop/shop.jsp?Sesso=donna&Category=" class="cool-link">Donna</a></li>
-											<%if(userSession.getAttribute("username") == null){ %>
+											<%if(userSession.getAttribute("profilo") == null){ %>
 											<li><a href="/Avenue814/PaginaAutenticazione/login.jsp" class="cool-link">Login</a></li>
 											<%}else
-											{ %>
+												
+											{
+												UserBean user = (UserBean) userSession.getAttribute("profilo");%>
 												
 												
-                                              <li><a id="menuButton"><%=userSession.getAttribute("username")%></a></li>
+                                              <li><a id="menuButton"><%=user.getUsername()%></a></li>
                                               
                                               <div id="menu" style="display:none;">
-                                                 <p><a href="/Avenue813/PaginaAutenticazione/datipersonali.jsp"> Dati Personali</a></p>
+                                                 <p><a href="/Avenue813/PaginaAutenticazione/datipersonali.jsp">Dati Personali</a></p>
                                                  <p><a href="/Avenue813/PaginaAutenticazione/mieiordini.jsp">I miei ordini</a></p>
                                                  <p><a href="/Avenue813/PaginaContatti/supportoemail.jsp">Contatti</a></p>
                                                  <p><a href="https://www.instagram.com/the_avenue813/?hl=it">Social</a></p>

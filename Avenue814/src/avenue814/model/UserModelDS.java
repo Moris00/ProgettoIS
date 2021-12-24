@@ -21,13 +21,11 @@ public class UserModelDS {
 		
 		Connection connection = DBConnection.getIstance().getCon();
 		
-		UserBean user = null;
+		UserBean user = new UserBean();
 		
-		String sql = "SELECT * FROM Utente WHERE Utente.email LIKE ? AND Utente.passw LIKE ?";
+		String sql = "SELECT * FROM Utente WHERE Utente.email LIKE '"+email+"' AND Utente.passw LIKE '"+password+"';";
 		
 		PreparedStatement ps = connection.prepareStatement(sql);
-		ps.setString(1, email);
-		ps.setString(2, password);
 		
 		ResultSet rs = ps.executeQuery();
 		while(rs.next()) {
