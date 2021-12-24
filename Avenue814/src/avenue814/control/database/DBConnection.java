@@ -31,7 +31,7 @@ public class DBConnection {
 		this.password = "ciaone123";
 		
 		Class.forName("com.mysql.jdbc.Driver");
-		String url = "jdbc:mysql://" +this.hostName +":"+this.hostPort+"/"+this.databaseName+"?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrival=true";
+		String url = "jdbc:mysql://" +this.hostName +":"+this.hostPort+"/"+this.databaseName+"?useSSL=false";
 		
 		this.conn = DriverManager.getConnection(url, this.userName, this.password);
 		this.conn.setAutoCommit(false);

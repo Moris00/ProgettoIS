@@ -13,4 +13,13 @@
   	<servlet-name>login</servlet-name>
   	<url-pattern>/login</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>viewProduct</servlet-name>
+  	<servlet-class>avenue814.controller.GestioneProdotti.ViewProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>viewProduct</servlet-name>
+  	<url-pattern>/viewProduct</url-pattern>
+  </servlet-mapping>
 </web-app>

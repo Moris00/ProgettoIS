@@ -38,10 +38,7 @@ public class UserModelDS {
 			user.setUsername(rs.getString("username"));
 		}
 		
-		rs.close();
-		ps.close();
-		connection.close();
-		
+			
 		if(user == null) {/*Eccezione*/}
 		
 		logger.severe("Login effetuato!!!");

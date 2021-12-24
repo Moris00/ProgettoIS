@@ -27,7 +27,7 @@ public class ProductBean {
 	 * @param sesso sesso del prodotto
 	 *
 	 * */
-	public ProductBean(int id, String nome, double prezzo, String descrizione, String categoria, int quantità, String path_image, String sesso) {
+	public ProductBean(int id, String nome, double prezzo, String descrizione, String categoria, int quantità, String path_image, String sesso, boolean disponibilità) {
 		this.id = id;
 		this.nome = nome;
 		this.prezzo = prezzo;
@@ -36,7 +36,7 @@ public class ProductBean {
 		this.quantità = quantità;
 		this.path_image = path_image;
 		this.sesso = sesso;
-		this.disponabilità=true;
+		this.disponabilità=disponibilità;
 	}
 	
 	/**

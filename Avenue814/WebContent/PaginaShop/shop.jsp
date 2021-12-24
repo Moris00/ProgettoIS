@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1" import="java.util.* ,avenue814.model.*"%>
     
 <%
-	Collection<?> products = (Collection<?>) request.getAttribute("products");
+	Collection<?> products = (Collection<?>) request.getAttribute("prodotti");
 
 	String error = (String) request.getAttribute("error");
 	HttpSession sessionUser = request.getSession();
@@ -15,11 +15,11 @@
 		
 			
 			if(products == null && category == null){
-				response.sendRedirect(response.encodeRedirectURL("../ProductControl?Sesso="+sesso));
+				response.sendRedirect(response.encodeRedirectURL("../viewProduct?Sesso="+sesso));
 			}else{
 			
 			if(category != null){
-				response.sendRedirect(response.encodeRedirectURL("../ProductControl?Sesso="+sesso+"&Category="+category));
+				response.sendRedirect(response.encodeRedirectURL("../viewProduct?Sesso="+sesso+"&Category="+category));
 			}
 		
 		}
@@ -87,16 +87,20 @@
 							
 							<input type="search" name="cerca" id="cerca" placeholder="Barra di ricerca" onblur="ricercaAJAX('content_search', '/Avenue813/SearchProductServlet', displayResult, document.getElementById('cerca').value);">
 							<div id="content_search"></div>
-							 <%if(sessionUser.getAttribute("role") == "Admin"){ %>
+							 <%
+							 	UserBean user = (UserBean) session.getAttribute("profilo");
+							 	if(user != null){
+								 	if(user.getRuolo().equals("Admin")){ 
+							 	%>
 								<button onclick="location.href='/Avenue813/PaginaShop/admin/aggiungi_prodotti.jsp'">Aggiungi prodotto</button>
-							<% } %><br>
-							<form action="/Avenue813/ProductControl1?Sesso=uomo" method="GET">
+							<% }} %><br>
+							<form action="/Avenue814/viewProduct?Sesso=uomo" method="GET">
 								<input type="text" id="cose" name="Sesso" value="<%=sesso%>" readonly>
-								<input type="submit" name="Category" value="Maglie"><br>
-								<input type="submit" name="Category" value="Felpe"><br>
-								<input type="submit" name="Category" value="Pantaloni"><br>
-								<input type="submit" name="Category" value="Sneakers"><br>
-								<input type="submit" name="Category" value="Accessori"><br>
+								<input type="submit" name="Categoria" value="Maglie"><br>
+								<input type="submit" name="Categoria" value="Felpe"><br>
+								<input type="submit" name="Categoria" value="Pantaloni"><br>
+								<input type="submit" name="Categoria" value="Sneakers"><br>
+								<input type="submit" name="Categoria" value="Accessori"><br>
 							</form>
 						</div>
 						
@@ -115,17 +119,20 @@
 								Iterator<?> it = products.iterator();
 								while(it.hasNext()){
 									ProductBean bean = (ProductBean)it.next();
+									
 						%>
 						
 						
 							<div class="product">
-								<%if(sessionUser.getAttribute("role") == "Admin"){ %>
+								<%
+									if(user != null){
+								if(user.getRuolo().equals("Admin")){ %>
 								<div class="remove_product">
 									<form name="remove" action="/Avenue813/RemoveProductList" method="GET">
 										<input type="submit" name=<%=bean.getId()%> value="X">
 									</form>
 								</div>
-								<% } %>
+								<% }} %>
 								<div class="image_product">
 									<img src="<%=bean.getPath_image() %>" width=150px height="150px" onerror="this.src='/Avenue813/immagini_prodotti/error.png'">
 								</div>
@@ -135,12 +142,12 @@
 									
 									</div>
 									<div class="buy_button">
-									<form action="/Avenue813/ViewProductServlet" method="GET">
+									<form action="/Avenue814/viewAProduct" method="GET">
 										<input type="submit" value="Dettagli" name=<%=bean.getId()%>>
 									</form>
 									</div>
 									<div class="price">
-										<% if(sessionUser.getAttribute("username") == null && sessionUser.getAttribute("passw") == null) { %>
+										<% if(sessionUser.getAttribute("profilo") == null) { %>
 											<span> <a href="/Avenue813/PaginaAutenticazione/login.jsp">Accedi!!</a></span>
 										<%	}else{ %>
 											<span class="prezzo_prodotto"><%= bean.getPrezzo() %> &euro;</span>
