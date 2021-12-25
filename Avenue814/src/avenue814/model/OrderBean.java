@@ -11,6 +11,7 @@ public class OrderBean{
 
 	private CarrelloBean carrello;
 	private int id_order; 
+	private int id_user;
 	private Date data;
 	private String nome;
 	private String cognome;
