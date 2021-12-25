@@ -34,7 +34,7 @@
 							<div class="colonna1">
 								<div class="logoimg">
 
-									<a href="/Avenue814/PaginaHome/home.jsp"><img  class="logo" src="/Avenue813/immagini/logo_bello.png" width=135px; height=95px;></a>
+									<a href="/Avenue814/PaginaHome/home.jsp"><img  class="logo" src="/Avenue814/IMAGES/logo_bello.png" width=135px; height=95px;></a>
 
 								</div>
 							</div>
@@ -102,13 +102,13 @@
             <li><a href="/Avenue813/PaginaHome/home.jsp">HOME</a></li>
             <li><a href="/Avenue813/PaginaShop/shop.jsp?Sesso=uomo">UOMO</a></li>       
             <li><a href="/Avenue813/PaginaShop/shop.jsp?Sesso=donna">DONNA</a></li>
-            <% if(userSession.getAttribute("username") == null || userSession.getAttribute("username") == ""){ %>
+            <% if(userSession.getAttribute("profilo") == null){ %>
             <li><a href="/Avenue813/PaginaAutenticazione/login.jsp">LOGIN</a></li>
             <%}else{ %>
-            <li><a href="/Avenue813/PaginaAutenticazione/datipersonali.jsp"><%=userSession.getAttribute("username")%></a></li>
+            <li><a href="/Avenue813/PaginaAutenticazione/datipersonali.jsp"><%=((UserBean) userSession.getAttribute("profilo")).getUsername() %></a></li>
             <li><a href="/Avenue813/PaginaAutenticazione/mieiordini.jsp">I MIEI ORDINI</a></li>
             <li><a href="/Avenue813/PaginaContatti/supportoemail.jsp">CONTATTI</a></li>
-            <li><a href="/Avenue813/PaginaShop/carrello.jsp">CARRELLO</a></li>
+            <li><a href="/Avenue814/PaginaShop/carrello.jsp">CARRELLO</a></li>
             <li><a href="/Avenue813/LogoutServlet">LOGOUT</a></li>
             
             <% } %>
@@ -127,17 +127,17 @@
 							
 						
 								<div class="logindiv">
-								<%   if(userSession.getAttribute("username") == null && userSession.getAttribute("passw") == null){ %>
+								<%   if(userSession.getAttribute("profilo") == null){ %>
 							
 								<% } else{
 										%>
 										
 									
-										<a id="login" href="/Avenue813/PaginaShop/carrello.jsp"><img src="/Avenue813/immagini/carrello-png-2.png" id="imgcar" width= 50px; height=50px;></a>
+										<a id="login" href="/Avenue814/PaginaShop/carrello.jsp"><img src="/Avenue814/IMAGES/carrello-png-2.png" id="imgcar" width= 50px; height=50px;></a>
 									<div class="info"><a href="/Avenue813/LogoutServlet">Logout</a></div>
 									
 									<div class="numerino">
-			                           <%CarrelloBean numerino = (CarrelloBean) userSession.getAttribute("carrello");
+			                           <%CarrelloBean numerino = (CarrelloBean) ((UserBean) userSession.getAttribute("profilo")).getCarrello();
 			                           		if(numerino != null){%>
 		                               <h3><%= numerino.getListaProdotti().size()%></h3>
 		                                 </div>

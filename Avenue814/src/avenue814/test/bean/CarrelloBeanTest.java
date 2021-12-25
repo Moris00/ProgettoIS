@@ -18,7 +18,7 @@ public class CarrelloBeanTest {
 	@Test
 	void testAddProduct() {
 		CarrelloBean carrello = new CarrelloBean();
-		ProductBean prodotto = new ProductBean(1, "Calzini",10.00, "sono calzini", "Accessori", 2, "", "Uomo");
+		ProductBean prodotto = new ProductBean(1, "Calzini",10.00, "sono calzini", "Accessori", 2, "", "Uomo", true);
 		carrello.addProduct(prodotto);
 		
 		assertEquals(carrello.searchProduct("Calzini"), prodotto);
@@ -27,7 +27,7 @@ public class CarrelloBeanTest {
 	@Test
 	void testSearchProduct(){
 		CarrelloBean carrello = new CarrelloBean();
-		ProductBean prodotto = new ProductBean(1, "Calzini",10.00, "sono calzini", "Accessori", 2, "", "Uomo");
+		ProductBean prodotto = new ProductBean(1, "Calzini",10.00, "sono calzini", "Accessori", 2, "", "Uomo", true);
 		carrello.addProduct(prodotto);
 		
 		ProductBean searchedProduct = carrello.searchProduct("Calzini");

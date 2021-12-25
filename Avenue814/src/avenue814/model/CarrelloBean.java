@@ -37,6 +37,25 @@ public class CarrelloBean {
 		logger.info("Prodotto "+item.getNome()+" aggiunto al carrello");
 	}
 	
+	public void removeProduct(ProductBean item) {
+		logger.info("Rimozione prodotto "+item.getNome()+" in corso...");
+		if(item == null) {/*Eccezione*/}
+		
+		listaProdotti.remove(searchProductGetIndex(item));
+		prezzoTot -= item.getPrezzo();
+		
+		logger.info("Prodotto "+item.getNome()+" eliminato dal carrello");
+	}
+	
+	public int searchProductGetIndex(ProductBean item) {
+		for(int i = 0; i < listaProdotti.size(); i++) {
+			if(listaProdotti.get(i).getId() == item.getId()) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	
 	public ProductBean searchProduct(String nome) {
 		for(int i = 0; i < listaProdotti.size(); i++) {
 			if(listaProdotti.get(i).getNome().equals(nome)) {

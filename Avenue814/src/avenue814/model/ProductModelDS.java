@@ -108,4 +108,29 @@ public class ProductModelDS {
 		return null;
 	}
 	
+	public ProductBean retrieveProductByName(String name) throws SQLException, ClassNotFoundException{
+		Connection conn = DBConnection.getIstance().getCon();
+		
+		String sql = "SELECT * FROM Prodotti WHERE Prodotti.nome = '"+name+"';";
+		logger.info("Ricerca del prodotto "+name+" in corso...");
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		
+		while(rs.next()) {
+			ProductBean bean = new ProductBean(rs.getInt("id_prodotti"),
+					rs.getString("nome"),
+					rs.getDouble("prezzo"),
+					rs.getString("descrizione"),
+					rs.getString("categoria"),
+					rs.getInt("quantità"),
+					rs.getString("pathImage"),
+					rs.getString("sesso"),
+					rs.getBoolean("disponibilità"));
+			logger.info("Ricerca completata!");
+			return bean;
+		}
+		
+		return null;
+	}
+	
 }

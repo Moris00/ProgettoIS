@@ -25,7 +25,7 @@
 			<div class="head">
 				<%@include file="../PaginaAddon/header.jsp"%>
 			</div>
-			<form action="../../CarrelloServlet" method="POST">
+			<form action="../addProductCart" method="POST">
 				<div class="product_div">
 				
 					<div class="product_image">

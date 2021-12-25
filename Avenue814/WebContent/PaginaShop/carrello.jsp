@@ -30,8 +30,8 @@
 				   <div class="item_carrello">
 				  
 					<% 
-				if(sessionUser.getAttribute("username") != null && sessionUser.getAttribute("passw") != null){
-					CarrelloBean carrello = (CarrelloBean) sessionUser.getAttribute("carrello");	
+				if(sessionUser.getAttribute("profilo") != null){
+					CarrelloBean carrello = (CarrelloBean) ((UserBean) sessionUser.getAttribute("profilo")).getCarrello() ;	
 					if(carrello == null) {
 						%>
 						<div class="vuoto">Il carrello è vuoto, aggiungi qualcosa!</div>
@@ -49,7 +49,7 @@
 									ProductBean bean = carrello.getProductByCounter(i);
 							%>
 							<div class="item">
-								 <form action="../RemoveProductCarrelloServlet" method="POST">
+								 <form action="../removeProductCart" method="POST">
 								<div class="immagine3">
 										<img alt="" src="<%=bean.getPath_image() %>">
 									</div>
