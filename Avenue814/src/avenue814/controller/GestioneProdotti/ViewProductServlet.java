@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
+import javax.sql.DataSource;
 
 import avenue814.model.ProductModelDS;
 
@@ -26,8 +27,8 @@ private Logger logger = Logger.getLogger("global");
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String categoria = request.getParameter("Categoria");
 		String sesso = request.getParameter("Sesso");
-		
-		ProductModelDS productModel = new ProductModelDS();
+		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
+		ProductModelDS productModel = new ProductModelDS(ds);
 		
 		if(categoria == null || categoria.equals("")) {
 			try {

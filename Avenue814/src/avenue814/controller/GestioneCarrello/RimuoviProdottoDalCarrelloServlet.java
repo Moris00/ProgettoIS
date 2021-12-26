@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.sql.DataSource;
 
 import avenue814.model.*;
 
@@ -24,10 +25,10 @@ public class RimuoviProdottoDalCarrelloServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			HttpSession userSession = request.getSession();
-			
+			DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 			if(userSession == null) {/*Eccezione*/}else {
 				UserBean user = (UserBean) userSession.getAttribute("profilo");
-				ProductModelDS productModel = new ProductModelDS();
+				ProductModelDS productModel = new ProductModelDS(ds);
 				
 				
 				String nome = request.getParameter("name_product");

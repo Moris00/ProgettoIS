@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.sql.DataSource;
 
 import avenue814.model.ProductModelDS;
 import avenue814.model.ProductBean;
@@ -31,9 +32,9 @@ public class ViewAProductServlet extends HttpServlet {
 		if(session.getAttribute("profilo") == null) {
 			response.sendRedirect("/Avenue814/PaginaAutenticazione/login.jsp");
 		}else {
+			DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		
-		
-		ProductModelDS productModel = new ProductModelDS();
+		ProductModelDS productModel = new ProductModelDS(ds);
 		String query = request.getQueryString();
 		query = query.replaceAll("\\D+", "");
 		

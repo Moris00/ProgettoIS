@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import javax.sql.DataSource;
 
 import avenue814.control.database.DBConnection;
 import avenue814.model.*;
@@ -31,7 +32,8 @@ public class LoginServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		try {
-			UserModelDS userModel = new UserModelDS();
+			DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
+			UserModelDS userModel = new UserModelDS(ds);
 			
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");

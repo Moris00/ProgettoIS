@@ -9,8 +9,8 @@
 	}
 		
 		int id = Integer.parseInt(request.getParameter("id"));
-		
-		ProductBean bean = new ProductModelDS().retrieveProductById(id);
+		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
+		ProductBean bean = new ProductModelDS(ds).retrieveProductById(id);
 		
 	%>
 

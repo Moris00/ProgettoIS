@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.sql.DataSource;
 
 import avenue814.model.CarrelloBean;
 import avenue814.model.ProductBean;
@@ -33,6 +34,7 @@ public class AggiungiProdottoCarrelloServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		logger.info("Aggiunta del prodotto al carrello in corso...");
 		HttpSession userSession = request.getSession();
+		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		
 		UserBean user = (UserBean) userSession.getAttribute("profilo");
 		
@@ -40,7 +42,7 @@ public class AggiungiProdottoCarrelloServlet extends HttpServlet {
 			/*Eccezione*/
 		}else {
 			String name = request.getParameter("product_name");
-			ProductModelDS productModel = new ProductModelDS();
+			ProductModelDS productModel = new ProductModelDS(ds);
 			try {
 				ProductBean product = productModel.retrieveProductByName(name);
 				logger.info("Trovato il prodotto "+product.getNome());

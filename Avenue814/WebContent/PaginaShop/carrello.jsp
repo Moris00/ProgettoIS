@@ -70,7 +70,7 @@
 					
 						</div>
 						<div class="pagamento">
-						<form name="pagament" onsubmit="return isValidOrder()" action="/Avenue813/AcquistoServlet" method="POST">
+						<form name="pagament" onsubmit="return isValidOrder()" action="../buyCart" method="POST">
 							<h3>METODO DI PAGAMENTO</h3>
 							<div class="method_pagamento">
 							
@@ -104,7 +104,7 @@
 								<div id="details_order">
 									<h3 id="tot">Totale: <%=carrello.getPrezzoTot() %> &euro;<span id="add">+5.00 &euro; (commissione)</span></h3>
 									<div id="div_check"><input type="button" value="Check" name="check" id="check" onclick="return isValidOrder();"></div>
-									<input type="button" value="Procedi" name="procedi" id="procedi" onclick="ajaxCall('title_error', '/Avenue813/AcquistoServlet', 3000);">
+									<input type="button" value="Procedi" name="procedi" id="procedi" onclick="ajaxCall('title_error', '/Avenue814/buyCart', 3000);">
 								</div>
 							
 							</div>

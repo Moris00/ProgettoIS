@@ -6,20 +6,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
+import javax.sql.DataSource;
+
 import avenue814.control.database.DBConnection;
 
 public class UserModelDS {
 	
 	private static Logger logger = Logger.getLogger("global");
+	private DataSource ds;
 	
-	public UserModelDS() {
-		super();
+	public UserModelDS(DataSource ds) {
+		this.ds = ds;
 	}
 	
 	public UserBean getLogin(String email, String password) throws SQLException, ClassNotFoundException {
 		logger.severe("Controllo il login...");
 		
-		Connection connection = DBConnection.getIstance().getCon();
+		Connection connection = ds.getConnection();
 		
 		UserBean user = new UserBean();
 		
@@ -38,7 +41,8 @@ public class UserModelDS {
 			user.setUsername(rs.getString("username"));
 		}
 		
-			
+		if(ps != null && connection != null) {ps.close();
+			connection.close();}
 		if(user == null) {/*Eccezione*/}
 		
 		logger.severe("Login effetuato!!!");
