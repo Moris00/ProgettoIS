@@ -110,7 +110,10 @@ public class ProductModelDS {
 					rs.getBoolean("disponibilità"));
 			logger.info("Ricerca completata!");
 			
-			if(ps != null) {ps.close();}
+			if(ps != null) {
+				rs.close();
+				ps.close();
+			conn.close();}
 			
 			return bean;
 		}
@@ -141,7 +144,9 @@ public class ProductModelDS {
 					rs.getBoolean("disponibilità"));
 			logger.info("Ricerca completata!");
 
-			if(ps != null) {ps.close();
+			if(ps != null) {
+				rs.close();
+				ps.close();
 			conn.close();}
 			
 			return bean;
@@ -152,4 +157,69 @@ public class ProductModelDS {
 		return null;
 	}
 	
+	public void toUpdateDisp(ProductBean item, boolean disp) throws SQLException {
+		Connection connection = ds.getConnection();
+		
+		String sql = "UPDATE Prodotti SET Prodotti.disponibilità = ? WHERE Prodotti.id_prodotti LIKE ?";
+		
+		PreparedStatement ps = connection.prepareStatement(sql);
+		
+		ps.setBoolean(1, disp);
+		ps.setInt(2, item.getId());
+		
+		ps.executeUpdate();
+		
+		ps.close();
+		connection.close();
+	}
+
+	public void aggiungiQuantità(ProductBean item) throws SQLException {
+		Connection connection = ds.getConnection();
+		String sql = "UPDATE Prodotti SET Prodotti.quantità = ? WHERE Prodotti.id_prodotti LIKE ?";
+		
+		PreparedStatement ps = connection.prepareStatement(sql);
+		ps.setInt(1, item.getQuantità());
+		ps.setInt(2, item.getId());
+		
+		ps.executeUpdate();
+		
+		ps.close();
+		connection.close();	
+		
+	}
+	
+	public ArrayList<String> getPathFiles() throws SQLException {
+		ArrayList<String> pathfiles = new ArrayList<String>();
+		
+		Connection connection = ds.getConnection();
+		String sql = "SELECT Prodotti.pathImage FROM Prodotti;";
+		PreparedStatement ps = connection.prepareStatement(sql);
+		
+		ResultSet rs = ps.executeQuery();
+		
+		while(rs.next()) {
+			pathfiles.add(rs.getString("pathImage"));
+		}
+		
+		rs.close();
+		ps.close();
+		connection.close();
+		
+		return pathfiles;
+	}
+	
+	public void doSave(ProductBean product) throws SQLException {
+		
+		Connection connection = ds.getConnection();
+		String sql = "INSERT INTO Prodotti(nome, prezzo, descrizione, categoria, quantità, pathImage, sesso) VALUES(?,?,?,?,?,?,?)";
+		PreparedStatement ps = connection.prepareStatement(sql);
+		
+		ps.setString(1, product.getNome());
+		ps.setDouble(2, product.getPrezzo());
+		ps.setString(3, product.getDescrizione());
+		ps.setString(4, product.getCategoria());
+		ps.setInt(5, product.getQuantità());
+		ps.setString(6, product.getPath_image());
+		ps.setString(7, product.getSesso());
+	}
 }

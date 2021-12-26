@@ -39,6 +39,17 @@ public class ProductBean {
 		this.disponabilità=disponibilità;
 	}
 	
+	public ProductBean(String nome, double prezzo, String descrizione, String categoria, int quantità, String path_image, String sesso, boolean disponibilità) {
+		this.nome = nome;
+		this.prezzo = prezzo;
+		this.descrizione = descrizione;
+		this.categoria = categoria;
+		this.quantità = quantità;
+		this.path_image = path_image;
+		this.sesso = sesso;
+		this.disponabilità=disponibilità;
+	}
+	
 	/**
 	 * @return id restituisce id del prodotto
 	 * 

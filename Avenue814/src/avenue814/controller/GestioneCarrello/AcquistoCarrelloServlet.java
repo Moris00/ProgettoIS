@@ -80,6 +80,8 @@ public class AcquistoCarrelloServlet extends HttpServlet {
 				}
 			}
 			
+			user.setCarrello(new CarrelloBean());
+			
 		}
 	}
 }

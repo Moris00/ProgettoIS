@@ -90,9 +90,9 @@
 							 <%
 							 	UserBean user = (UserBean) session.getAttribute("profilo");
 							 	if(user != null){
-								 	if(user.getRuolo().equals("Admin")){ 
+								 	if(user.getRuolo().equals("admin")){ 
 							 	%>
-								<button onclick="location.href='/Avenue813/PaginaShop/admin/aggiungi_prodotti.jsp'">Aggiungi prodotto</button>
+								<button onclick="location.href='/Avenue814/PaginaShop/aggiungi_prodotti.jsp'">Aggiungi prodotto</button>
 							<% }} %><br>
 							<form action="/Avenue814/viewProduct?Sesso=uomo" method="GET">
 								<input type="text" id="cose" name="Sesso" value="<%=sesso%>" readonly>
@@ -119,6 +119,7 @@
 								Iterator<?> it = products.iterator();
 								while(it.hasNext()){
 									ProductBean bean = (ProductBean)it.next();
+									if(bean.isDisponabilità()){
 									
 						%>
 						
@@ -126,9 +127,9 @@
 							<div class="product">
 								<%
 									if(user != null){
-								if(user.getRuolo().equals("Admin")){ %>
+								if(user.getRuolo().equals("admin")){ %>
 								<div class="remove_product">
-									<form name="remove" action="/Avenue813/RemoveProductList" method="GET">
+									<form name="remove" action="/Avenue814/removeProduct" method="GET">
 										<input type="submit" name=<%=bean.getId()%> value="X">
 									</form>
 								</div>
@@ -158,6 +159,7 @@
 							</div>
 						
 						<%
+									}
 								}
 							} 
 						%>

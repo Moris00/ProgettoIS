@@ -54,7 +54,7 @@ function getReadyStateHandler(req, id, timeout) {
 }
 
 function sito(){
-	window.location.href= "/Avenue813/PaginaShop/shop.jsp";
+	window.location.href= "/Avenue814/PaginaShop/shop.jsp";
 	
 }
 
