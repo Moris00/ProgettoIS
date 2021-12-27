@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"pacchetto.GestioneUser","l":"UserBean"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"avenue814.model","l":"OrderBean"}];updateSearchResults();

@@ -1,7 +1,7 @@
 package avenue814.model;
 
 /**
- * Definisce l'entità Prodotto
+ * Definisce l'entitï¿½ Prodotto
  * 
  * */
 public class ProductBean {
@@ -11,10 +11,10 @@ public class ProductBean {
 	private double prezzo;
 	private String descrizione;
 	private String categoria;
-	private int quantità;
+	private int quantita;
 	private String path_image;
 	private String sesso;
-	private boolean disponabilità;
+	private boolean disponibilita;
 	private int id_prop;
 	
 	/**
@@ -23,33 +23,33 @@ public class ProductBean {
 	 * @param prezzo prezzo del prodotto
 	 * @param descrizione descrizione dettagliata del prodotto
 	 * @param categoria categoria del prodotto
-	 * @param quantità quantità del prodotto
+	 * @param quantitï¿½ quantitï¿½ del prodotto
 	 * @param path_image il percorso file per l'immagine del prodotto
 	 * @param sesso sesso del prodotto
 	 *
 	 * */
-	public ProductBean(int id, String nome, double prezzo, String descrizione, String categoria, int quantità, String path_image, String sesso, boolean disponibilità, int id_prop) {
+	public ProductBean(int id, String nome, double prezzo, String descrizione, String categoria, int quantita, String path_image, String sesso, boolean disponibilita, int id_prop) {
 		this.id = id;
 		this.nome = nome;
 		this.prezzo = prezzo;
 		this.descrizione = descrizione;
 		this.categoria = categoria;
-		this.quantità = quantità;
+		this.quantita = quantita;
 		this.path_image = path_image;
 		this.sesso = sesso;
-		this.disponabilità=disponibilità;
+		this.disponibilita=disponibilita;
 		this.id_prop = id_prop;
 	}
 	
-	public ProductBean(String nome, double prezzo, String descrizione, String categoria, int quantità, String path_image, String sesso, boolean disponibilità) {
+	public ProductBean(String nome, double prezzo, String descrizione, String categoria, int quantita, String path_image, String sesso, boolean disponibilita) {
 		this.nome = nome;
 		this.prezzo = prezzo;
 		this.descrizione = descrizione;
 		this.categoria = categoria;
-		this.quantità = quantità;
+		this.quantita = quantita;
 		this.path_image = path_image;
 		this.sesso = sesso;
-		this.disponabilità=disponibilità;
+		this.disponibilita=disponibilita;
 	}
 	
 	/**
@@ -135,18 +135,18 @@ public class ProductBean {
 
 	
 	/**
-	 * @return quantità restituisce la quantità del prodotto
+	 * @return quantitï¿½ restituisce la quantitï¿½ del prodotto
 	 * */
-	public int getQuantità() {
-		return quantità;
+	public int getQuantita() {
+		return quantita;
 	}
 
 	
 	/**
-	 * @param quantità quantità del prodotto
+	 * @param quantitï¿½ quantitï¿½ del prodotto
 	 * */
-	public void setQuantità(int quantità) {
-		this.quantità = quantità;
+	public void setQuantita(int quantita) {
+		this.quantita = quantita;
 	}
 
 	
@@ -183,18 +183,18 @@ public class ProductBean {
 
 	
 	/**
-	 * @return disponibilità restituisce la disponibilità del prodotto
+	 * @return disponibilitï¿½ restituisce la disponibilitï¿½ del prodotto
 	 * */
-	public boolean isDisponabilità() {
-		return disponabilità;
+	public boolean isDisponabilita() {
+		return disponibilita;
 	}
 
 	
 	/**
-	 * @param disponibilità disponibilità del prodotto
+	 * @param disponibilitï¿½ disponibilitï¿½ del prodotto
 	 * */
-	public void setDisponabilità(boolean disponabilità) {
-		this.disponabilità = disponabilità;
+	public void setDisponibilita(boolean disponabilita) {
+		this.disponibilita = disponabilita;
 	}
 	
 	

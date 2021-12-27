@@ -37,11 +37,11 @@ public class ProductModelDS {
 					rs.getDouble("prezzo"),
 					rs.getString("descrizione"),
 					rs.getString("categoria"),
-					rs.getInt("quantità"),
+					rs.getInt("quantitï¿½"),
 					rs.getString("pathImage"),
 					rs.getString("sesso"),
-					rs.getBoolean("disponibilità"),
-					rs.getInt("proprietà"));
+					rs.getBoolean("disponibilitï¿½"),
+					rs.getInt("proprietï¿½"));
 			
 			listaProdotti.add(bean);
 			
@@ -74,11 +74,11 @@ public class ProductModelDS {
 					rs.getDouble("prezzo"),
 					rs.getString("descrizione"),
 					rs.getString("categoria"),
-					rs.getInt("quantità"),
+					rs.getInt("quantitï¿½"),
 					rs.getString("pathImage"),
 					rs.getString("sesso"),
-					rs.getBoolean("disponibilità"),
-					rs.getInt("proprietà"));
+					rs.getBoolean("disponibilitï¿½"),
+					rs.getInt("proprietï¿½"));
 			
 			listaProdotti.add(bean);
 			
@@ -106,11 +106,11 @@ public class ProductModelDS {
 					rs.getDouble("prezzo"),
 					rs.getString("descrizione"),
 					rs.getString("categoria"),
-					rs.getInt("quantità"),
+					rs.getInt("quantitï¿½"),
 					rs.getString("pathImage"),
 					rs.getString("sesso"),
-					rs.getBoolean("disponibilità"),
-					rs.getInt("proprietà"));
+					rs.getBoolean("disponibilitï¿½"),
+					rs.getInt("proprietï¿½"));
 			logger.info("Ricerca completata!");
 			
 			if(ps != null) {
@@ -141,11 +141,11 @@ public class ProductModelDS {
 					rs.getDouble("prezzo"),
 					rs.getString("descrizione"),
 					rs.getString("categoria"),
-					rs.getInt("quantità"),
+					rs.getInt("quantitï¿½"),
 					rs.getString("pathImage"),
 					rs.getString("sesso"),
-					rs.getBoolean("disponibilità"),
-					rs.getInt("proprietà"));
+					rs.getBoolean("disponibilitï¿½"),
+					rs.getInt("proprietï¿½"));
 			logger.info("Ricerca completata!");
 
 			if(ps != null) {
@@ -164,7 +164,7 @@ public class ProductModelDS {
 	public void toUpdateDisp(ProductBean item, boolean disp) throws SQLException {
 		Connection connection = ds.getConnection();
 		
-		String sql = "UPDATE Prodotti SET Prodotti.disponibilità = ? WHERE Prodotti.id_prodotti LIKE ?";
+		String sql = "UPDATE Prodotti SET Prodotti.disponibilitï¿½ = ? WHERE Prodotti.id_prodotti LIKE ?";
 		
 		PreparedStatement ps = connection.prepareStatement(sql);
 		
@@ -177,12 +177,12 @@ public class ProductModelDS {
 		connection.close();
 	}
 
-	public void aggiungiQuantità(ProductBean item) throws SQLException {
+	public void aggiungiQuantita(ProductBean item) throws SQLException {
 		Connection connection = ds.getConnection();
-		String sql = "UPDATE Prodotti SET Prodotti.quantità = ? WHERE Prodotti.id_prodotti LIKE ?";
+		String sql = "UPDATE Prodotti SET Prodotti.quantitï¿½ = ? WHERE Prodotti.id_prodotti LIKE ?";
 		
 		PreparedStatement ps = connection.prepareStatement(sql);
-		ps.setInt(1, item.getQuantità());
+		ps.setInt(1, item.getQuantita());
 		ps.setInt(2, item.getId());
 		
 		ps.executeUpdate();
@@ -215,14 +215,14 @@ public class ProductModelDS {
 	public void doSave(ProductBean product, UserBean user) throws SQLException {
 		
 		Connection connection = ds.getConnection();
-		String sql = "INSERT INTO Prodotti(nome, prezzo, descrizione, categoria, quantità, pathImage, sesso, proprietà) VALUES(?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO Prodotti(nome, prezzo, descrizione, categoria, quantitï¿½, pathImage, sesso, proprietï¿½) VALUES(?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = connection.prepareStatement(sql);
 		
 		ps.setString(1, product.getNome());
 		ps.setDouble(2, product.getPrezzo());
 		ps.setString(3, product.getDescrizione());
 		ps.setString(4, product.getCategoria());
-		ps.setInt(5, product.getQuantità());
+		ps.setInt(5, product.getQuantita());
 		ps.setString(6, product.getPath_image());
 		ps.setString(7, product.getSesso());
 		ps.setInt(8, user.getId());

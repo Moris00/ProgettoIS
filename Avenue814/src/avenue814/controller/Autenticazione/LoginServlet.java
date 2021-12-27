@@ -18,8 +18,8 @@ public class LoginServlet extends HttpServlet {
 	private Logger logger = Logger.getLogger("global");
 	
 	/**
-	 * 
-	 */
+	 * definisce la servlet per il login
+	 * */
 	private static final long serialVersionUID = 1L;
 	
 	public LoginServlet(){

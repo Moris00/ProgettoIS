@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.logging.Logger;
 
 /**
- * Definisce l'entit‡ Carrello 
+ * Definisce l'entit√† Carrello 
  * */
 public class CarrelloBean {
 	

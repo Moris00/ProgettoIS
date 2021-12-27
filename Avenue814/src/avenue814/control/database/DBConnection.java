@@ -7,6 +7,10 @@ public class DBConnection {
 
 	private static Logger logger = Logger.getLogger("global");
 	
+	/**
+	 * definisce la connessione con il database
+	 */
+	
 	private static DBConnection instance = null;
 	private Connection conn;
 	private String databaseName;
@@ -18,6 +22,12 @@ public class DBConnection {
 	
 	/**
 	 * Costruttore DB
+	 * @param conn è lo stato della connessione
+	 * @param hostName è il nome dell'host
+	 * @param hostPort è il numero di porta dell'host
+	 * @param databaseName è il nome del database
+	 * @param userName è il nome dell'user
+	 * @param password è la password dell'users
 	 * @throws ClassNotFoundException 
 	 * @throws SQLException 
 	 * */

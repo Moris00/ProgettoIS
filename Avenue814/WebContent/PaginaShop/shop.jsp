@@ -119,7 +119,7 @@
 								Iterator<?> it = products.iterator();
 								while(it.hasNext()){
 									ProductBean bean = (ProductBean)it.next();
-									if(bean.isDisponabilità()){
+									if(bean.isDisponabilita()){
 									
 						%>
 						

@@ -17,6 +17,10 @@ import javax.sql.DataSource;
 
 import avenue814.model.*;
 
+/**
+ * definisce la servlet per l'acquisto tramite carrello
+ * */
+
 @WebServlet("/buyCart")
 public class AcquistoCarrelloServlet extends HttpServlet {
 	
@@ -29,6 +33,7 @@ public class AcquistoCarrelloServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		doPost(request, response);
 	}
+	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		HttpSession userSession = request.getSession();
@@ -43,7 +48,7 @@ public class AcquistoCarrelloServlet extends HttpServlet {
 			
 			String nome = request.getParameter("nome");
 			String cognome = request.getParameter("cognome");
-			String città = request.getParameter("citta");
+			String citta = request.getParameter("citta");
 			String indirizzo = request.getParameter("indirizzo");
 			String telefono = request.getParameter("indirizzo");
 			

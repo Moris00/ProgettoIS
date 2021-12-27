@@ -58,14 +58,14 @@ public class AggiungiProdottoServlet extends HttpServlet{
 		try {
 			ProductBean product = productModel.retrieveProductByName(nome);
 			if(product != null && product.getPrezzo() == prezzo) {
-				logger.info("Il prodotto già esiste, modifichiamo solo la quantità...");
-				product.setQuantità(product.getQuantità() + quantita);
-				productModel.aggiungiQuantità(product);
+				logger.info("Il prodotto giï¿½ esiste, modifichiamo solo la quantitï¿½...");
+				product.setQuantita(product.getQuantita() + quantita);
+				productModel.aggiungiQuantita(product);
 				productModel.toUpdateDisp(product, true);
 				response.sendRedirect("/Avenue814/PaginaShop/shop.jsp");
 				return;
 			}else if(product != null) {
-				session.setAttribute("error", "Nome già esistente");
+				session.setAttribute("error", "Nome giï¿½ esistente");
 				response.sendRedirect("/Avenue814/PaginaShop/aggiungi_prodotti.jsp");
 				return;
 			}
