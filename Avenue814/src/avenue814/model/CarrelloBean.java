@@ -24,7 +24,7 @@ public class CarrelloBean {
 	
 	
 	/**
-	 * 
+	 * @param item prodotto che verrà aggiunto al carrello
 	 * 
 	 * */
 	public void addProduct(ProductBean item) {
@@ -37,6 +37,9 @@ public class CarrelloBean {
 		logger.info("Prodotto "+item.getNome()+" aggiunto al carrello");
 	}
 	
+	/**
+	 * @param item prodotto che verrà rimosso dal carrello
+	 * */
 	public void removeProduct(ProductBean item) {
 		logger.info("Rimozione prodotto "+item.getNome()+" in corso...");
 		if(item == null) {/*Eccezione*/}
@@ -47,6 +50,10 @@ public class CarrelloBean {
 		logger.info("Prodotto "+item.getNome()+" eliminato dal carrello");
 	}
 	
+	/**
+	 * @param item ricerca il prodotto nella lista
+	 * @return l'indice del prodotto
+	 * */
 	public int searchProductGetIndex(ProductBean item) {
 		for(int i = 0; i < listaProdotti.size(); i++) {
 			if(listaProdotti.get(i).getId() == item.getId()) {
@@ -56,6 +63,10 @@ public class CarrelloBean {
 		return -1;
 	}
 	
+	
+	/**
+	 * @param nome nome del prodotto ricercato
+	 * */
 	public ProductBean searchProduct(String nome) {
 		for(int i = 0; i < listaProdotti.size(); i++) {
 			if(listaProdotti.get(i).getNome().equals(nome)) {
@@ -65,9 +76,6 @@ public class CarrelloBean {
 		return null;
 	}
 	
-	public ProductBean getProductByCounter(int a) {
-		return listaProdotti.get(a);
-	}
 	
 	
 	public void addPrice(double a) {prezzoTot += a;}
