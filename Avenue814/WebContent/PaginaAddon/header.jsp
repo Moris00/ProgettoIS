@@ -109,7 +109,7 @@
             <li><a href="/Avenue813/PaginaAutenticazione/mieiordini.jsp">I MIEI ORDINI</a></li>
             <li><a href="/Avenue813/PaginaContatti/supportoemail.jsp">CONTATTI</a></li>
             <li><a href="/Avenue814/PaginaShop/carrello.jsp">CARRELLO</a></li>
-            <li><a href="/Avenue813/LogoutServlet">LOGOUT</a></li>
+            <li><a href="/Avenue814/logout">LOGOUT</a></li>
             
             <% } %>
            </ul>
@@ -134,7 +134,7 @@
 										
 									
 										<a id="login" href="/Avenue814/PaginaShop/carrello.jsp"><img src="/Avenue814/IMAGES/carrello-png-2.png" id="imgcar" width= 50px; height=50px;></a>
-									<div class="info"><a href="/Avenue813/LogoutServlet">Logout</a></div>
+									<div class="info"><a href="/Avenue814/logout">Logout</a></div>
 									
 									<div class="numerino">
 			                           <%CarrelloBean numerino = (CarrelloBean) ((UserBean) userSession.getAttribute("profilo")).getCarrello();

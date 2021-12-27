@@ -40,7 +40,8 @@ public class ProductModelDS {
 					rs.getInt("quantità"),
 					rs.getString("pathImage"),
 					rs.getString("sesso"),
-					rs.getBoolean("disponibilità"));
+					rs.getBoolean("disponibilità"),
+					rs.getInt("proprietà"));
 			
 			listaProdotti.add(bean);
 			
@@ -76,7 +77,8 @@ public class ProductModelDS {
 					rs.getInt("quantità"),
 					rs.getString("pathImage"),
 					rs.getString("sesso"),
-					rs.getBoolean("disponibilità"));
+					rs.getBoolean("disponibilità"),
+					rs.getInt("proprietà"));
 			
 			listaProdotti.add(bean);
 			
@@ -107,7 +109,8 @@ public class ProductModelDS {
 					rs.getInt("quantità"),
 					rs.getString("pathImage"),
 					rs.getString("sesso"),
-					rs.getBoolean("disponibilità"));
+					rs.getBoolean("disponibilità"),
+					rs.getInt("proprietà"));
 			logger.info("Ricerca completata!");
 			
 			if(ps != null) {
@@ -141,7 +144,8 @@ public class ProductModelDS {
 					rs.getInt("quantità"),
 					rs.getString("pathImage"),
 					rs.getString("sesso"),
-					rs.getBoolean("disponibilità"));
+					rs.getBoolean("disponibilità"),
+					rs.getInt("proprietà"));
 			logger.info("Ricerca completata!");
 
 			if(ps != null) {
@@ -208,10 +212,10 @@ public class ProductModelDS {
 		return pathfiles;
 	}
 	
-	public void doSave(ProductBean product) throws SQLException {
+	public void doSave(ProductBean product, UserBean user) throws SQLException {
 		
 		Connection connection = ds.getConnection();
-		String sql = "INSERT INTO Prodotti(nome, prezzo, descrizione, categoria, quantità, pathImage, sesso) VALUES(?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO Prodotti(nome, prezzo, descrizione, categoria, quantità, pathImage, sesso, proprietà) VALUES(?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = connection.prepareStatement(sql);
 		
 		ps.setString(1, product.getNome());
@@ -221,5 +225,11 @@ public class ProductModelDS {
 		ps.setInt(5, product.getQuantità());
 		ps.setString(6, product.getPath_image());
 		ps.setString(7, product.getSesso());
+		ps.setInt(8, user.getId());
+		
+		ps.executeUpdate();
+		
+		ps.close();
+		connection.close();
 	}
 }

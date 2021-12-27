@@ -38,6 +38,15 @@ public class UserBean{
 		this.carrello = new CarrelloBean();
 	}
 	
+	public UserBean(String nome, String cognome, String password, String email, String username, String ruolo) {
+		this.nome = nome;
+		this.cognome = cognome;
+		this.password = password;
+		this.email = email;
+		this.username = username;
+		this.ruolo = ruolo;
+	}
+	
 	public UserBean() {
 		
 	}

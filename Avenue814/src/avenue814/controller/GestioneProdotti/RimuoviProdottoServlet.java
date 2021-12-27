@@ -32,7 +32,10 @@ public class RimuoviProdottoServlet extends HttpServlet {
 		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		
 		
-		if((user.getRuolo().equals("Admin"))) {/*Eccezione*/}
+		if((user.getRuolo().equals("Admin"))) {/*Eccezione*/
+			request.setAttribute("errore", "Non hai accesso a questa pagina");
+			response.sendRedirect("/Avenue814/PaginaAddon/errorepage.jsp");
+		}
 		
 		String query = request.getQueryString();
 		query = query.replaceAll("\\D+", "");

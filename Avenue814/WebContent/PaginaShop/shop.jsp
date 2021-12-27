@@ -90,7 +90,7 @@
 							 <%
 							 	UserBean user = (UserBean) session.getAttribute("profilo");
 							 	if(user != null){
-								 	if(user.getRuolo().equals("admin")){ 
+								 	if(user.getRuolo().equals("admin") || user.getRuolo().equals("rivenditore")){
 							 	%>
 								<button onclick="location.href='/Avenue814/PaginaShop/aggiungi_prodotti.jsp'">Aggiungi prodotto</button>
 							<% }} %><br>
@@ -133,7 +133,16 @@
 										<input type="submit" name=<%=bean.getId()%> value="X">
 									</form>
 								</div>
-								<% }} %>
+								<% }else if(user.getRuolo().equals("rivenditore") && bean.getId_prop() == user.getId()){
+									%>
+									
+									<div class="remove_product">
+									<form name="remove" action="/Avenue814/removeProduct" method="GET">
+										<input type="submit" name=<%=bean.getId()%> value="X">
+									</form>
+									</div>
+									
+								<%}} %>
 								<div class="image_product">
 									<img src="<%=bean.getPath_image() %>" width=150px height="150px" onerror="this.src='/Avenue813/immagini_prodotti/error.png'">
 								</div>

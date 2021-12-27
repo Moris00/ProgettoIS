@@ -15,6 +15,7 @@ public class ProductBean {
 	private String path_image;
 	private String sesso;
 	private boolean disponabilità;
+	private int id_prop;
 	
 	/**
 	 * @param id numero che identifica il prodotto
@@ -27,7 +28,7 @@ public class ProductBean {
 	 * @param sesso sesso del prodotto
 	 *
 	 * */
-	public ProductBean(int id, String nome, double prezzo, String descrizione, String categoria, int quantità, String path_image, String sesso, boolean disponibilità) {
+	public ProductBean(int id, String nome, double prezzo, String descrizione, String categoria, int quantità, String path_image, String sesso, boolean disponibilità, int id_prop) {
 		this.id = id;
 		this.nome = nome;
 		this.prezzo = prezzo;
@@ -37,6 +38,7 @@ public class ProductBean {
 		this.path_image = path_image;
 		this.sesso = sesso;
 		this.disponabilità=disponibilità;
+		this.id_prop = id_prop;
 	}
 	
 	public ProductBean(String nome, double prezzo, String descrizione, String categoria, int quantità, String path_image, String sesso, boolean disponibilità) {
@@ -58,7 +60,8 @@ public class ProductBean {
 		return id;
 	}
 
-	
+	public int getId_prop() {return id_prop;}
+	public void setId_prop(int id_prop) {this.id_prop = id_prop;}
 	
 	/**
 	 * @param id id del prodotto

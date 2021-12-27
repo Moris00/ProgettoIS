@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
@@ -26,6 +27,8 @@ import avenue814.model.*;
 				maxRequestSize = 1024 * 1024 * 50)
 public class AggiungiProdottoServlet extends HttpServlet{
 	
+	private static Logger logger = Logger.getLogger("global");
+	
 	public AggiungiProdottoServlet() {
 		super();
 	}
@@ -40,6 +43,12 @@ public class AggiungiProdottoServlet extends HttpServlet{
 		
 		ProductModelDS productModel = new ProductModelDS(ds);
 		HttpSession session = request.getSession();
+		UserBean user = (UserBean) session.getAttribute("profilo");
+		
+		if(user == null) {/*Eccezione*/
+			request.setAttribute("errore", "Non hai accesso a questa pagina");
+			response.sendRedirect("/Avenue814/PaginaAddon/errorepage.jsp");
+		}
 		
 		
 		String nome = request.getParameter("nome_prodotto");
@@ -49,6 +58,7 @@ public class AggiungiProdottoServlet extends HttpServlet{
 		try {
 			ProductBean product = productModel.retrieveProductByName(nome);
 			if(product != null && product.getPrezzo() == prezzo) {
+				logger.info("Il prodotto già esiste, modifichiamo solo la quantità...");
 				product.setQuantità(product.getQuantità() + quantita);
 				productModel.aggiungiQuantità(product);
 				productModel.toUpdateDisp(product, true);
@@ -69,11 +79,12 @@ public class AggiungiProdottoServlet extends HttpServlet{
 		String sesso = request.getParameter("sesso");
 		String descrizione = request.getParameter("descrizione");
 		ArrayList<String> files = null;
-		String savePath = "C:\\Users\\Moris\\git\\ProgettoIS_Avenue814\\Avenue814\\WebContent\\IMAGES_PRODOTTI";
+		String savePath = "C:\\Users\\Utente\\git\\ProgettoIS_Avenue814\\Avenue814\\WebContent\\IMAGES_PRODOTTI";
 		String savePath2 = "/Avenue814/IMAGES_PRODOTTI/";
 		String stringa = "";
 		int flag = 1;
 		if(request.getParts() != null && request.getParts().size() > 0) {
+			logger.info("Troviamo il percorso...");
 			for(Part part: request.getParts()) {
 				String filename = extractFileName(part);
 					try {
@@ -103,10 +114,13 @@ public class AggiungiProdottoServlet extends HttpServlet{
 			}
 		}
 		
+		logger.info("Percorso finale: "+stringa);
+		
 		ProductBean bean = new ProductBean(nome, prezzo, descrizione, categoria, quantita, stringa, sesso, true);
 		
 		try {
-			productModel.doSave(bean);
+			logger.info("Inserimento nuovo prodotto "+bean.getNome()+"...");
+			productModel.doSave(bean, user);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

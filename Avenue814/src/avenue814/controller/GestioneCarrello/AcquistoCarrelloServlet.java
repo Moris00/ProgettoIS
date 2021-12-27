@@ -33,7 +33,10 @@ public class AcquistoCarrelloServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		HttpSession userSession = request.getSession();
 		
-		if(userSession == null) {/*Eccezione*/}else {
+		if(userSession == null) {/*Eccezione*/
+			request.setAttribute("errore", "Non hai accesso a questa pagina");
+			response.sendRedirect("/Avenue814/PaginaAddon/errorepage.jsp");
+		}else {
 			UserBean user = (UserBean) userSession.getAttribute("profilo");
 			DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 			CarrelloBean carrello = user.getCarrello();

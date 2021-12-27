@@ -40,6 +40,8 @@ public class AggiungiProdottoCarrelloServlet extends HttpServlet {
 		
 		if(user == null) {
 			/*Eccezione*/
+			request.setAttribute("errore", "Non hai accesso a questa pagina");
+			response.sendRedirect("/Avenue814/PaginaAddon/errorepage.jsp");
 		}else {
 			String name = request.getParameter("product_name");
 			ProductModelDS productModel = new ProductModelDS(ds);

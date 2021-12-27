@@ -4,8 +4,9 @@
 <html>
 	<%
 	if(request.getSession() == null){
-		response.sendRedirect("/Avenue813/PaginaUtili/errorpage.jsp");
-		return;
+	    	request.setAttribute("errore", "Non puoi accedere a questa pagina");
+	    	RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/PaginaAddon/errorpage.jsp");
+			dispatcher.forward(request, response);
 	}
 		
 		int id = Integer.parseInt(request.getParameter("id"));

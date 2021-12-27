@@ -59,5 +59,7 @@
 </html>
 
 <% }else{
-	response.sendRedirect("/Avenue813/PaginaUtili/errorpage.jsp");
+	request.setAttribute("errore", "Non puoi accedere a questa pagina");
+	RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/PaginaAddon/errorpage.jsp");
+	dispatcher.forward(request, response);
 }%>

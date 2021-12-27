@@ -30,7 +30,8 @@ public class ViewAProductServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		HttpSession session = request.getSession();
 		if(session.getAttribute("profilo") == null) {
-			response.sendRedirect("/Avenue814/PaginaAutenticazione/login.jsp");
+			request.setAttribute("errore", "Devi effettuar il login");
+			response.sendRedirect("/Avenue814/PaginaAddon/errorepage.jsp");
 		}else {
 			DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		

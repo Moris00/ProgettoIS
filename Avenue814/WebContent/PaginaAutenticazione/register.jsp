@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-    <% String error = (String) request.getAttribute("errorLogin"); %>
+    <% String error = (String) request.getAttribute("errorLogin"); 
+    	if(request.getSession().getAttribute("profilo") != null){
+    	request.setAttribute("errore", "Non puoi accedere a questa pagina");
+    	RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/PaginaAddon/errorpage.jsp");
+		dispatcher.forward(request, response);
+    }%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,7 +18,7 @@
 	<body>
 	 <script><%@include file="../JS/correct_auth.js"%></script> 
 		<div class="bodycontent">
-			<form name="formRegister" onsubmit ="return isValidForm()" action="/Avenue813/RegisterServlet" method="POST">
+			<form name="formRegister" onsubmit ="return isValidForm()" action="/Avenue814/registration" method="POST">
 				<div class="registerbox">
 					<div class="title">
 						<h1>E' arrivato il momento di registrarsi</h1>

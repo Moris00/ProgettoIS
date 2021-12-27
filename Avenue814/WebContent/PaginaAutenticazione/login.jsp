@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-    <% String error = (String) request.getAttribute("errorLogin"); %>
+    <% String error = (String) request.getAttribute("errorLogin"); 
+    	if(request.getAttribute("profilo") != null){
+    		request.setAttribute("errore", "Non puoi accedere a questa pagina");
+	    	RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/PaginaAddon/errorpage.jsp");
+			dispatcher.forward(request, response);
+    	}%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -30,7 +35,7 @@
 					<% if(error != null){ %><div class="error_div"><p id="errorLogin"><%=request.getAttribute("errorLogin") %></div><%} %>
 					<div class="login">
 						<input type="submit" value="Login" class="button" >
-						<input type="button" onclick="location.href='/Avenue813/PaginaAutenticazione/register.jsp'" value="Register Page" class="button" >
+						<input type="button" onclick="location.href='/Avenue814/PaginaAutenticazione/register.jsp'" value="Register Page" class="button" >
 					</div>
 				</div>
 				</fieldset>

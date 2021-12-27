@@ -50,4 +50,45 @@ public class UserModelDS {
 		
 	}
 	
+	public boolean isNewUser(UserBean user) throws SQLException {
+		Connection connection = ds.getConnection();
+		
+		String sql = "Select * From Utente WHERE Utente.email LIKE '"+user.getEmail()+"';";
+		
+		PreparedStatement ps = connection.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		
+		if(rs.next()) {
+			rs.close();
+			ps.close();
+			connection.close();
+			return false;
+		}
+		rs.close();
+		ps.close();
+		connection.close();
+		return true;
+		
+	}
+	
+	public void addNewUser(UserBean user) throws SQLException {
+		logger.info("Inserimento del nuovo utente al DS, l'account: "+user.getEmail());
+		Connection connection = ds.getConnection();
+		
+		String sql = "INSERT INTO Utente (email, passw, nome, cognome, username, ruolo) VALUES(?,?,?,?,?,?)";
+		PreparedStatement ps = connection.prepareStatement(sql);
+		
+		ps.setString(1, user.getEmail());
+		ps.setString(2, user.getPassword());
+		ps.setString(3, user.getNome());
+		ps.setString(4, user.getCognome());
+		ps.setString(5, user.getUsername());
+		ps.setString(6, user.getRuolo());
+		
+		ps.executeUpdate();
+		
+		logger.info("L'account "+user.getEmail()+" aggiunto");
+		ps.close();
+		connection.close();
+	}
 }
