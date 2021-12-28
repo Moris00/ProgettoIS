@@ -38,7 +38,7 @@ public class RegistrazioneServlet extends HttpServlet {
 		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		
 		
-		UserModelDS userModel = new UserModelDS(ds);
+		UserModelDS userModel = new UserModelDS();
 		
 		UserBean user = new UserBean(request.getParameter("name"),
 				request.getParameter("secondname"),

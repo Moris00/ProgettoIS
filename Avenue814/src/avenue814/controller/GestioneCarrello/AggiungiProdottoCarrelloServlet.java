@@ -33,9 +33,7 @@ public class AggiungiProdottoCarrelloServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		logger.info("Aggiunta del prodotto al carrello in corso...");
-		HttpSession userSession = request.getSession();
-		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
-		
+		HttpSession userSession = request.getSession();	
 		UserBean user = (UserBean) userSession.getAttribute("profilo");
 		
 		if(user == null) {
@@ -44,7 +42,7 @@ public class AggiungiProdottoCarrelloServlet extends HttpServlet {
 			response.sendRedirect("/Avenue814/PaginaAddon/errorepage.jsp");
 		}else {
 			String name = request.getParameter("product_name");
-			ProductModelDS productModel = new ProductModelDS(ds);
+			ProductModelDS productModel = new ProductModelDS();
 			try {
 				ProductBean product = productModel.retrieveProductByName(name);
 				logger.info("Trovato il prodotto "+product.getNome());

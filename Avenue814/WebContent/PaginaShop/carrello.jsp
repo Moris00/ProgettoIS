@@ -46,7 +46,7 @@
 							<% 
 								int i = 0;
 								while(i < carrello.getListaProdotti().size()){
-									ProductBean bean = carrello.getProductByCounter(i);
+									ProductBean bean = carrello.getListaProdotti().get(i);
 							%>
 							<div class="item">
 								 <form action="../removeProductCart" method="POST">

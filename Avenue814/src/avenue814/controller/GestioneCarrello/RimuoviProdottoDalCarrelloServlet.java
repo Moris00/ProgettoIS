@@ -25,13 +25,12 @@ public class RimuoviProdottoDalCarrelloServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			HttpSession userSession = request.getSession();
-			DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 			if(userSession == null) {/*Eccezione*/
 				request.setAttribute("errore", "Non hai accesso a questa pagina");
 				response.sendRedirect("/Avenue814/PaginaAddon/errorepage.jsp");
 			}else {
 				UserBean user = (UserBean) userSession.getAttribute("profilo");
-				ProductModelDS productModel = new ProductModelDS(ds);
+				ProductModelDS productModel = new ProductModelDS();
 				
 				
 				String nome = request.getParameter("name_product");

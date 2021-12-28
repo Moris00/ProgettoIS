@@ -11,16 +11,15 @@ import avenue814.control.database.DBConnection;
 
 public class OrderModelDS {
 	private static Logger logger = Logger.getLogger("global");
-	private DataSource ds;
+	static Connection conn = DBConnection.getConnection();
 	
-	public OrderModelDS(DataSource ds) {
-		this.ds = ds;
+	public OrderModelDS() {
+		super();
 	}
 	
 	public void addOrderDS(OrderBean order) throws SQLException, ClassNotFoundException{
 		PreparedStatement ps = null;
 		try {
-		Connection conn = ds.getConnection();
 		
 		
 		logger.info("Inserimento ordine dell'utente "+order.getId_user()+"...");
@@ -34,7 +33,6 @@ public class OrderModelDS {
 		int r = ps.executeUpdate();
 		
 		if(r == 1) logger.info("Inserimento ordine completata!!");
-		conn.close();
 		}catch(SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

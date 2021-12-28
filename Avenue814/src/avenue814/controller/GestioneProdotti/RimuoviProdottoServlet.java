@@ -29,7 +29,6 @@ public class RimuoviProdottoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession userSession = request.getSession();
 		UserBean user = (UserBean) userSession.getAttribute("profilo");
-		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		
 		
 		if((user.getRuolo().equals("Admin"))) {/*Eccezione*/
@@ -41,7 +40,7 @@ public class RimuoviProdottoServlet extends HttpServlet {
 		query = query.replaceAll("\\D+", "");
 		
 		ProductBean product = null;
-		ProductModelDS productModel = new ProductModelDS(ds);
+		ProductModelDS productModel = new ProductModelDS();
 		try {
 			product = productModel.retrieveProductById(Integer.parseInt(query));
 			productModel.toUpdateDisp(product, false);

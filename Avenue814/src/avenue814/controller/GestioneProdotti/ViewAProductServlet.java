@@ -33,9 +33,8 @@ public class ViewAProductServlet extends HttpServlet {
 			request.setAttribute("errore", "Devi effettuar il login");
 			response.sendRedirect("/Avenue814/PaginaAddon/errorepage.jsp");
 		}else {
-			DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		
-		ProductModelDS productModel = new ProductModelDS(ds);
+		ProductModelDS productModel = new ProductModelDS();
 		String query = request.getQueryString();
 		query = query.replaceAll("\\D+", "");
 		

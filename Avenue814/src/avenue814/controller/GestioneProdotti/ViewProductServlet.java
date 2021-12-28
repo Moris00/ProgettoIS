@@ -27,8 +27,8 @@ private Logger logger = Logger.getLogger("global");
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String categoria = request.getParameter("Categoria");
 		String sesso = request.getParameter("Sesso");
-		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
-		ProductModelDS productModel = new ProductModelDS(ds);
+
+		ProductModelDS productModel = new ProductModelDS();
 		
 		if(categoria == null || categoria.equals("")) {
 			try {

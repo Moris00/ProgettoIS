@@ -1,4 +1,4 @@
-package avenue814.test.bean;
+package avenue814.test.model;
 
 
 import static org.junit.jupiter.api.Assertions.*;
