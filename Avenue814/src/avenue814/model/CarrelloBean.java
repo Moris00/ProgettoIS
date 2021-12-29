@@ -76,7 +76,10 @@ public class CarrelloBean {
 		return null;
 	}
 	
-	
+	/**
+	 * Metodo che serve per calcolare il prodotto del carrello
+	 * @param a il prezzo del prodotto che verrà sommato a quello del carrello
+	 * */
 	
 	public void addPrice(double a) {prezzoTot += a;}
 	
