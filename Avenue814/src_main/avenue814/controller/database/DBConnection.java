@@ -1,4 +1,4 @@
-package avenue814.control.database;
+package avenue814.controller.database;
 
 import java.sql.*;
 import java.util.logging.Logger;

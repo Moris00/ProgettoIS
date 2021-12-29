@@ -9,7 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import javax.sql.DataSource;
 
-import avenue814.control.database.DBConnection;
+import avenue814.controller.database.DBConnection;
 import avenue814.model.*;
 
 

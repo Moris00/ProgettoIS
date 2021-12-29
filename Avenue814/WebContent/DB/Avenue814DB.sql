@@ -109,7 +109,7 @@ DROP TABLE IF EXISTS Gestisce ;
 
 CREATE TABLE Gestisce( id_prodotti int NOT NULL , 
                     id_rivenditore int NOT NULL ,
-                    disponibilità boolean default true,
+                    disponibilita boolean default true,
                      FOREIGN KEY (id_prodotti) REFERENCES Prodotti(id_prodotti),
                      FOREIGN KEY (id_rivenditore) REFERENCES Rivenditore(id_utente)
                      );

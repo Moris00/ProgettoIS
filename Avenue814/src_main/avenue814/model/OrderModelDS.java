@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
-import avenue814.control.database.DBConnection;
+import avenue814.controller.database.DBConnection;
 
 public class OrderModelDS {
 	private static Logger logger = Logger.getLogger("global");
