@@ -1,15 +1,23 @@
 package avenue814.test.model;
 
+import java.sql.SQLException;
+
+import org.dbunit.Assertion;
+import org.dbunit.DatabaseUnitException;
 import org.dbunit.IDatabaseTester;
 import org.dbunit.JdbcDatabaseTester;
 import org.dbunit.dataset.DataSetException;
 import org.dbunit.dataset.IDataSet;
+import org.dbunit.dataset.ITable;
+import org.dbunit.dataset.SortedTable;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.operation.DatabaseOperation;
+import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
+import avenue814.model.OrderBean;
 import avenue814.model.OrderModelDS;
 
 public class OrderModelDSTest {
@@ -24,9 +32,9 @@ public class OrderModelDSTest {
 	}
 	
 	@BeforeEach
-	public void setUp() throws DataSetException {
+	public void setUp() throws Exception {
 		refreshDataSet("WebContent/DB/init.xml");
-		dao = new OrderModelDS();
+		dao = new OrderModelDS(t.getConnection().getConnection());
 	}
 	
 	@AfterEach
@@ -38,6 +46,16 @@ public class OrderModelDSTest {
 		IDataSet initialState = new FlatXmlDataSetBuilder().build(OrderModelDSTest.class.getClassLoader().getResourceAsStream(filename));
 		t.setDataSet(initialState);
 		t.onSetup();
+	}
+	
+	@Test
+	public void TestaddOrderDS() throws SQLException, Exception {
+		ITable expected = new FlatXmlDataSetBuilder().build(OrderModelDSTest.class.getClassLoader().getResourceAsStream("WebContent/DB/testAddOrder.xml")).getTable("Ordini");
+		
+		ITable actual = t.getConnection().createDataSet().getTable("Ordini");
+		
+		Assertion.assertEquals(new SortedTable(expected), new SortedTable(actual));
+		
 	}
 	
 }

@@ -17,6 +17,10 @@ public class OrderModelDS {
 		super();
 	}
 	
+	public OrderModelDS(Connection conn) {
+		this.conn = conn;
+	}
+	
 	public void addOrderDS(OrderBean order) throws SQLException, ClassNotFoundException{
 		PreparedStatement ps = null;
 		try {

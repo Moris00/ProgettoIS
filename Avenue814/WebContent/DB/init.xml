@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<Ordini id_ordini='1' id_user='3' id_prodotto='111' indirizzo='Via casina 23' method_pagamento='Contrassegno' dataa='2021/12/28 17:56'></Ordini>
+	<Ordini id_ordini='2' id_user='3' id_prodotto='222' indirizzo='Via casina 23' method_pagamento='Contrassegno' dataa='2021/12/28 17:56'></Ordini>
+</dataset>
