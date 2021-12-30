@@ -62,7 +62,7 @@ public class AcquistoCarrelloServlet extends HttpServlet {
 					logger.info("OrderBean creato: "+item.getData()+" ,"+item.getId_prodotto()+" , effettuato da: "+item.getId_user());
 					
 					
-					OrderModelDS orderModel = new OrderModelDS();
+					OrderDAO orderModel = new OrderDAO();
 					try {
 						orderModel.addOrderDS(item);
 					} catch (ClassNotFoundException | SQLException e1) {
@@ -77,7 +77,7 @@ public class AcquistoCarrelloServlet extends HttpServlet {
 					
 					OrderBean item = new OrderBean(e.getId(), timeStamp, nome, cognome, indirizzo, telefono, metodo_di_pagamento);
 					
-					OrderModelDS orderModel = new OrderModelDS();
+					OrderDAO orderModel = new OrderDAO();
 					try {
 						orderModel.addOrderDS(item);
 					} catch (ClassNotFoundException | SQLException e1) {

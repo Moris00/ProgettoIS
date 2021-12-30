@@ -9,12 +9,12 @@ import javax.sql.*;
 
 import avenue814.controller.database.DBConnection;
 
-public class ProductModelDS {
+public class ProductDAO {
 	
 	private static Logger logger = Logger.getLogger("global");
 	static Connection conn = DBConnection.getConnection();
 	
-	public ProductModelDS() {
+	public ProductDAO() {
 		super();
 	}
 	

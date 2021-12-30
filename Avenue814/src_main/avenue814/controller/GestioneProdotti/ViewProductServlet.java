@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.sql.DataSource;
 
-import avenue814.model.ProductModelDS;
+import avenue814.model.ProductDAO;
 
 public class ViewProductServlet extends HttpServlet {
 
@@ -28,7 +28,7 @@ private Logger logger = Logger.getLogger("global");
 		String categoria = request.getParameter("Categoria");
 		String sesso = request.getParameter("Sesso");
 
-		ProductModelDS productModel = new ProductModelDS();
+		ProductDAO productModel = new ProductDAO();
 		
 		if(categoria == null || categoria.equals("")) {
 			try {

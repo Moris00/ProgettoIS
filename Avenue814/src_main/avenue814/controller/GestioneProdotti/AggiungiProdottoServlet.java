@@ -40,7 +40,7 @@ public class AggiungiProdottoServlet extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ProductModelDS productModel = new ProductModelDS();
+		ProductDAO productModel = new ProductDAO();
 		HttpSession session = request.getSession();
 		UserBean user = (UserBean) session.getAttribute("profilo");
 		

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import avenue814.model.ProductBean;
-import avenue814.model.ProductModelDS;
+import avenue814.model.ProductDAO;
 import avenue814.model.UserBean;
 
 @WebServlet("/removeProduct")
@@ -40,7 +40,7 @@ public class RimuoviProdottoServlet extends HttpServlet {
 		query = query.replaceAll("\\D+", "");
 		
 		ProductBean product = null;
-		ProductModelDS productModel = new ProductModelDS();
+		ProductDAO productModel = new ProductDAO();
 		try {
 			product = productModel.retrieveProductById(Integer.parseInt(query));
 			productModel.toUpdateDisp(product, false);

@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 
 import avenue814.model.CarrelloBean;
 import avenue814.model.ProductBean;
-import avenue814.model.ProductModelDS;
+import avenue814.model.ProductDAO;
 import avenue814.model.UserBean;
 
 
@@ -42,7 +42,7 @@ public class AggiungiProdottoCarrelloServlet extends HttpServlet {
 			response.sendRedirect("/Avenue814/PaginaAddon/errorepage.jsp");
 		}else {
 			String name = request.getParameter("product_name");
-			ProductModelDS productModel = new ProductModelDS();
+			ProductDAO productModel = new ProductDAO();
 			try {
 				ProductBean product = productModel.retrieveProductByName(name);
 				logger.info("Trovato il prodotto "+product.getNome());

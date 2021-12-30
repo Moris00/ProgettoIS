@@ -10,12 +10,12 @@ import javax.sql.DataSource;
 
 import avenue814.controller.database.DBConnection;
 
-public class UserModelDS {
+public class UserDAO {
 	
 	private static Logger logger = Logger.getLogger("global");
 	static Connection conn = DBConnection.getConnection();
 	
-	public UserModelDS() {
+	public UserDAO() {
 		super();
 	}
 	
@@ -23,7 +23,7 @@ public class UserModelDS {
 		logger.severe("Controllo il login...");
 
 		
-		UserBean user = new UserBean();
+		UserBean user = null;
 		
 		String sql = "SELECT * FROM Utente WHERE Utente.email LIKE '"+email+"' AND Utente.passw LIKE '"+password+"';";
 		
@@ -31,13 +31,14 @@ public class UserModelDS {
 		
 		ResultSet rs = ps.executeQuery();
 		while(rs.next()) {
-			user.setId(rs.getInt("id_utente"));
-			user.setCarrello(new CarrelloBean());
-			user.setCognome(rs.getString("cognome"));
-			user.setNome(rs.getString("nome"));
-			user.setEmail(rs.getString("email"));
-			user.setRuolo(rs.getString("ruolo"));
-			user.setUsername(rs.getString("username"));
+			user = new UserBean(rs.getInt("id_utente"),
+						rs.getString("nome"),
+						rs.getString("cognome"),
+						rs.getString("username"),
+						rs.getString("email"),
+						rs.getString("ruolo"),
+						rs.getString("username"));
+			
 		}
 		
 		if(ps != null) {ps.close();}

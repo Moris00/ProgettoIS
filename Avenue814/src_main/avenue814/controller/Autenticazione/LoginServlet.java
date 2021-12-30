@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		try {
 			DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
-			UserModelDS userModel = new UserModelDS();
+			UserDAO userModel = new UserDAO();
 			
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");

@@ -47,9 +47,6 @@ public class UserBean{
 		this.ruolo = ruolo;
 	}
 	
-	public UserBean() {
-		
-	}
 	
 
 	/**

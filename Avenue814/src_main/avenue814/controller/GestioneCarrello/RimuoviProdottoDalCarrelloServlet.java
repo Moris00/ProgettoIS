@@ -30,7 +30,7 @@ public class RimuoviProdottoDalCarrelloServlet extends HttpServlet {
 				response.sendRedirect("/Avenue814/PaginaAddon/errorepage.jsp");
 			}else {
 				UserBean user = (UserBean) userSession.getAttribute("profilo");
-				ProductModelDS productModel = new ProductModelDS();
+				ProductDAO productModel = new ProductDAO();
 				
 				
 				String nome = request.getParameter("name_product");

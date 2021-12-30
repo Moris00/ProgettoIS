@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import avenue814.model.UserBean;
-import avenue814.model.UserModelDS;
+import avenue814.model.UserDAO;
 
 @WebServlet("/registration")
 public class RegistrazioneServlet extends HttpServlet {
@@ -38,7 +38,7 @@ public class RegistrazioneServlet extends HttpServlet {
 		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
 		
 		
-		UserModelDS userModel = new UserModelDS();
+		UserDAO userModel = new UserDAO();
 		
 		UserBean user = new UserBean(request.getParameter("name"),
 				request.getParameter("secondname"),

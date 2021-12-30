@@ -9,15 +9,15 @@ import javax.sql.DataSource;
 
 import avenue814.controller.database.DBConnection;
 
-public class OrderModelDS {
+public class OrderDAO{
 	private static Logger logger = Logger.getLogger("global");
 	static Connection conn = DBConnection.getConnection();
 	
-	public OrderModelDS() {
+	public OrderDAO() {
 		super();
 	}
 	
-	public OrderModelDS(Connection conn) {
+	public OrderDAO(Connection conn) {
 		this.conn = conn;
 	}
 	

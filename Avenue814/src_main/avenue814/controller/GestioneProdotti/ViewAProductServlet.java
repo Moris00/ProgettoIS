@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
-import avenue814.model.ProductModelDS;
 import avenue814.model.ProductBean;
+import avenue814.model.ProductDAO;
 
 @WebServlet("/viewAProduct")
 public class ViewAProductServlet extends HttpServlet {
@@ -34,7 +34,7 @@ public class ViewAProductServlet extends HttpServlet {
 			response.sendRedirect("/Avenue814/PaginaAddon/errorepage.jsp");
 		}else {
 		
-		ProductModelDS productModel = new ProductModelDS();
+		ProductDAO productModel = new ProductDAO();
 		String query = request.getQueryString();
 		query = query.replaceAll("\\D+", "");
 		
