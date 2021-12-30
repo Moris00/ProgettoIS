@@ -98,7 +98,7 @@
 						<h2>COLLEZIONE DA UOMO</h2>
 						<p>Summertime is a space-time dimension on its own.
 						 Explore our streetwear essentials and help your mind release endorphins thanks to a comprehensive selection that include 
-						 shoes, shirts, tote bags and more.</p>
+						 shoes, shirt, tote bags and more.</p>
 					</div>
 					<div class="immagine">
 						<a href="/Avenue813/PaginaShop/shop.jsp?Sesso=uomo">
