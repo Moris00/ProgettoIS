@@ -145,7 +145,7 @@ insert into Prodotti(id_prodotti,nome, prezzo, descrizione, categoria, quantita,
 insert into Prodotti(id_prodotti,nome, prezzo, descrizione, categoria, quantita,pathImage, sesso) values(555,"Ciabatte Adidas", 15.00, "Preparati ad andare al mare con Adidas", "Accessori",1, "/Avenue814/IMAGES_PRODOTTI/ciabatte_adidas.png","uomo");
 insert into Prodotti(id_prodotti,nome, prezzo, descrizione, categoria, quantita,pathImage, sesso) values(666,"T-Shirt Levi's", 35.00, "E' il momento che ti Levi's la maglia che indossi", "Maglie",3, "/Avenue814/IMAGES_PRODOTTI/maglia_levis.png","uomo");
 insert into Prodotti(id_prodotti,nome, prezzo, descrizione, categoria, quantita,pathImage, sesso) values(777,"Jeans Levi's", 75.00, "E' un pantalone incantevole", "Pantaloni",5, "/Avenue814/IMAGES_PRODOTTI/pantaloni_levis.png","uomo");
-/*??? sesso*/
+
  insert into Prodotti(id_prodotti,nome, prezzo, descrizione, categoria, quantita,pathImage,sesso) values(888,"Leggins Nike Gray", 65.00, "Un bellissimo leggins per le signore amanti dello sport", "Pantaloni",5, "/Avenue814/IMAGES_PRODOTTI/leggins_gray.png", "donna");
  insert into Prodotti(id_prodotti,nome, prezzo, descrizione, categoria, quantita,pathImage,sesso)  values(999,"Tuta Adidas Completa", 70.00, "E' una semplice tuta però nero e fucsia","Maglie", 5, "/Avenue814/IMAGES_PRODOTTI/adidas_tuta_completa.png", "donna");
  insert into Prodotti(id_prodotti,nome, prezzo, descrizione, categoria, quantita,pathImage,sesso)  values(112,"T-Shirt Fila", 23.00, "Una T-Shirt da donna con tutto rispetto", "Maglie",5, "/Avenue814/IMAGES_PRODOTTI/tshirt_fila.png", "donna");
