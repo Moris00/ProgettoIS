@@ -10,7 +10,7 @@
 	}
 		
 		int id = Integer.parseInt(request.getParameter("id"));
-		ProductBean bean = new ProductModelDS().retrieveProductById(id);
+		ProductBean bean = new ProductDAO().retrieveProductById(id);
 		
 	%>
 

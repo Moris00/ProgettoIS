@@ -14,7 +14,7 @@ drop user if exists 'admin'@'localhost';
 
  
 
-create user 'admin'@'localhost' identified by 'Avenue813';
+create user 'admin'@'localhost' identified by 'Avenue814';
 
  
 
