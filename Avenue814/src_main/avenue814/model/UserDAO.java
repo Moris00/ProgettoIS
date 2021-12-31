@@ -19,6 +19,10 @@ public class UserDAO {
 		super();
 	}
 	
+	public UserDAO(Connection connection) {
+		conn = connection;
+	}
+
 	public UserBean getLogin(String email, String password) throws SQLException, ClassNotFoundException {
 		logger.severe("Controllo il login...");
 
