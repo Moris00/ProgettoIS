@@ -3,6 +3,8 @@ package avenue814.model;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
+import avenue814.eccezioni.ProdottoNullException;
+
 /**
  * Definisce l'entità Carrello 
  * */
@@ -25,11 +27,11 @@ public class CarrelloBean {
 	
 	/**
 	 * @param item prodotto che verrà aggiunto al carrello
+	 * @throws ProdottoNullException 
 	 * 
 	 * */
-	public void addProduct(ProductBean item) {
+	public void addProduct(ProductBean item) throws NullPointerException {
 		logger.info("Aggiunta prodotto "+item.getNome()+" in corso...");
-		if(item == null) {/*Eccezione*/}
 		
 		listaProdotti.add(item);
 		prezzoTot += item.getPrezzo();
@@ -40,14 +42,17 @@ public class CarrelloBean {
 	/**
 	 * @param item prodotto che verrà rimosso dal carrello
 	 * */
-	public void removeProduct(ProductBean item) {
+	public void removeProduct(ProductBean item) throws NullPointerException {
 		logger.info("Rimozione prodotto "+item.getNome()+" in corso...");
-		if(item == null) {/*Eccezione*/}
 		
-		listaProdotti.remove(searchProductGetIndex(item));
-		prezzoTot -= item.getPrezzo();
+		int i = searchProductGetIndex(item);
+		if(i < 0) {logger.info("Prodotto non trovato :(");}else {
+			listaProdotti.remove(i);
+			prezzoTot -= item.getPrezzo();
 		
 		logger.info("Prodotto "+item.getNome()+" eliminato dal carrello");
+		}
+		
 	}
 	
 	/**
@@ -63,18 +68,7 @@ public class CarrelloBean {
 		return -1;
 	}
 	
-	
-	/**
-	 * @param nome nome del prodotto ricercato
-	 * */
-	public ProductBean searchProduct(String nome) {
-		for(int i = 0; i < listaProdotti.size(); i++) {
-			if(listaProdotti.get(i).getNome().equals(nome)) {
-				return listaProdotti.get(i);
-			}
-		}
-		return null;
-	}
+
 	
 	/**
 	 * Metodo che serve per calcolare il prodotto del carrello
@@ -85,7 +79,7 @@ public class CarrelloBean {
 	
 	public void refreshTot() {
 		logger.info("Ricalcolo del prezzo totale del carrello...");
-			int tot = 0;
+			double tot = 0;
 			if(listaProdotti.size() == 0 ) {/*Eccezione*/}
 		for(int i = 0; i < listaProdotti.size(); i++) {
 			tot += listaProdotti.get(i).getPrezzo();
