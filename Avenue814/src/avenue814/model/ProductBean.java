@@ -135,7 +135,7 @@ public class ProductBean {
 
 	
 	/**
-	 * @return quantit� restituisce la quantit� del prodotto
+	 * @return quantita restituisce la quantita del prodotto
 	 * */
 	public int getQuantita() {
 		return quantita;
@@ -143,7 +143,7 @@ public class ProductBean {
 
 	
 	/**
-	 * @param quantit� quantit� del prodotto
+	 * @param quantita quantita del prodotto
 	 * */
 	public void setQuantita(int quantita) {
 		this.quantita = quantita;
