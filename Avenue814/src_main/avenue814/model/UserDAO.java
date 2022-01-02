@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import javax.sql.DataSource;
 
 import avenue814.controller.database.DBConnection;
+import avenue814.utils.Utility;
 
 public class UserDAO {
 	
@@ -29,7 +30,7 @@ public class UserDAO {
 		
 		UserBean user = null;
 		
-		String sql = "SELECT * FROM Utente WHERE Utente.email LIKE '"+email+"' AND Utente.passw LIKE '"+password+"';";
+		String sql = "SELECT * FROM Utente WHERE Utente.email LIKE '"+email+"' AND Utente.passw LIKE '"+Utility.encode(password)+"';";
 		
 		PreparedStatement ps = conn.prepareStatement(sql);
 		
@@ -77,8 +78,10 @@ public class UserDAO {
 		String sql = "INSERT INTO Utente (email, passw, nome, cognome, username, ruolo) VALUES(?,?,?,?,?,?)";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		
+		
+		
 		ps.setString(1, user.getEmail());
-		ps.setString(2, user.getPassword());
+		ps.setString(2, Utility.encode(user.getPassword()));
 		ps.setString(3, user.getNome());
 		ps.setString(4, user.getCognome());
 		ps.setString(5, user.getUsername());
