@@ -132,9 +132,9 @@ CREATE TABLE Amministratore(
 
  
 
-insert into Utente(email, passw, nome, cognome, username, ruolo) values ('primo@gmail.com','primo','Silvio','Berlusconi','Silvio99', "cliente");
-insert into Utente(email, passw, nome, cognome, username, ruolo) values ('secondo@gmail.com','moris','Maurizio','Ricco','moris', "admin");
-insert into Utente(email, passw, nome, cognome, username, ruolo) values ('riv@gmail.com', 'riv123', 'Tony', 'Effe', 'tony1', "rivenditore");
+insert into Utente(email, passw, nome, cognome, username, ruolo) values ('primo@gmail.com','cHJpbW8=','Silvio','Berlusconi','Silvio99', "cliente");
+insert into Utente(email, passw, nome, cognome, username, ruolo) values ('secondo@gmail.com','bW9yaXM=','Maurizio','Ricco','moris', "admin");
+insert into Utente(email, passw, nome, cognome, username, ruolo) values ('riv@gmail.com', 'cml2MTIz', 'Tony', 'Effe', 'tony1', "rivenditore");
  
 insert into Prodotti(nome, prezzo, descrizione, categoria, quantita,pathImage, sesso, proprieta) values("Air Force 1 Nike Nere", 100.00, "Preparati a volare con le nuove Nike Shoes", "Sneakers",3, "/Avenue814/IMAGES_PRODOTTI/airforce1.png", "uomo", 3);
 
