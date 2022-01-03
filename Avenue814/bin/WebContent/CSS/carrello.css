@@ -1,0 +1,258 @@
+@charset "ISO-8859-1";
+
+body{
+	width: 99%;
+	margin: 0 auto;
+}
+
+.main{
+	width: 100%;
+}
+
+
+
+.carrello{
+	width: 80%;
+	height: 700px;
+	border: 2px solid pink;
+	border-radius: 5px;
+	margin: 0 auto;
+	margin-top: 10px;
+	
+}
+
+.item_carrello{
+	overflow: auto;
+	height: 95.7%;
+	margin: 1%;
+	width: 25%;
+	border: 2px solid pink;
+	border-radius: 5px;
+	float:left;
+	
+}
+
+
+.item_carrello .vuoto{
+	margin-top: 65%;
+	color: red;
+	font-size: 15px;
+	text-align: center;
+	
+}
+
+.item{
+	height: 20%;
+	margin: 2%;
+	border: 2px solid pink;
+	border-radius: 5px;
+	
+}
+
+.item_carrello form{
+	display: inline;
+}
+
+.immagine3{
+	margin: 2%;
+	width: 35%;
+	height: 90%;
+	float: left;
+}
+
+.desc{
+	width: 63%;
+	height: 90%;
+	text-align: center;
+}
+
+.immagine3 img{
+	margin: 2%;
+	width: 90%;
+	height: 90%;
+}
+
+.title{
+	width: 100%;
+	margin-left: 58%;
+	margin-top: 8%;
+}
+
+.title p{
+	text-align: center;
+}
+
+.price{
+	width: 100%;
+	margin-left: 61%;
+}
+
+.price p{
+	text-align: center;
+}
+.delete{
+	align-items: center;
+	margin-left: 70%;
+	margin-top: 12%;
+	padding-left: 23%;
+}
+
+.item input[type="text"]{
+	border: none;
+	background-color: white;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	
+}
+
+.delete input[type="submit"]{
+	border: none;
+	cursor: pointer;	
+	color: black;
+	background: pink;	
+}
+
+.delete input[type="submit"]:hover{
+	color: pink;
+	background: black;	
+}
+
+
+.pagamento{
+	width: 72%;
+	margin: 1%;
+	margin-left: 27%;
+	border: 2px solid pink;
+	border-radius: 5px;
+}
+
+.pagamento h3{
+	text-align: center;
+}
+
+.method_pagamento{
+	margin-top: 4%;
+}
+
+.method_pagamento li{
+	display: inline;
+	padding: 7%;
+}
+
+
+.method_pagamento img{
+	width: 8%;
+	height: 5%;
+}
+
+#details_user li{
+	display: inline;
+	padding: 0.1%;
+	text-align: center;
+}
+
+#details_user li input[type="text"], #details_card li input[type="text"]{
+	border: 2px solid pink;
+	border-radius: 5px;
+}
+
+
+#details_order input[type="submit"]{
+	border: 2px solid black;
+	color: black;
+	background: pink;
+	border-radius: 5px;
+}
+
+#details_order input[type="submit"]:hover{
+	border: 2px solid pink;
+	color: pink;
+	background: black;
+	border-radius: 5px;
+}
+
+#details_user{
+	padding-top: 8%;
+	text-align: center;	
+	display: none;
+}
+
+#details_card li{
+	display: inline;
+	padding: 5%;
+}
+
+#details_card{
+	padding-top: 8%;
+	display: none;
+	text-align: center;	
+}
+
+#details_order{
+	margin-top: 3%;
+	margin-bottom: 4%;
+	text-align:center;
+}
+
+#error{
+	margin-top: 5%;
+}
+#title_error{
+	color: red;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.update{
+	text-align: center;
+	font-size: 12px;
+	color: red;
+}
+
+#add{
+	display: none;
+}
+
+#check{
+	border: 2px solid pink;
+	color: black;
+	background: pink;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#check{
+	border: 2px solid pink;
+	color: black;
+	background: pink;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#check:hover{
+	color: pink;
+	background: black;
+}
+
+#div_check{
+	text-align: center;
+}
+
+#procedi{
+	border: 2px solid pink;
+	color: black;
+	background: pink;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: auto;
+    margin-top: 2%;
+	display: none;
+}
+
+#procedi:hover{
+	color: pink;
+	background: black;
+
+}

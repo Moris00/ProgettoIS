@@ -1,0 +1,311 @@
+@charset "ISO-8859-1";
+
+
+
+ body {
+
+ 	 width: 100%;
+	height: 100%;
+	margin: 0 auto;
+ }
+ 
+ #myBtn{
+ 	display: none;
+ 	position: fixed;
+ 	bottom: 20px;
+ 	right: 30px;
+  	z-index: 99;
+  	font-size: 18px;
+  	border: none;
+  	outline: none;
+  	background-color: red;
+  	color: white;
+  	cursor: pointer;
+  	padding: 15px;
+  	border-radius: 4px;
+ }
+ 
+ #myBtn:hover {
+  background-color: #555;
+}
+ 
+ 
+ .tipi{
+ 	width: 100%;
+ 	height: 800px;
+ 	margin-top: 2px;
+ }
+ 
+ 
+#header .content{
+ 	position: relative;
+	padding-left: 30px;
+	padding-right: 30px;
+ }
+ 
+
+
+.colonna1{
+	width: 15%;
+		background-color: pink;
+}
+
+.colonna2{
+	width: 75%;
+  	background-color:pink;
+	
+}
+
+.colonna3{
+	width: 10%;
+		background-color: pink;
+}
+
+.logindiv{
+	padding-top: 8px;
+	padding-left: 85px;
+}
+
+.freccia_dx, .freccia_sx, .galleria{
+	float: left;
+	height: 100%;
+}
+
+.freccia_dx{
+	width: 15%;
+}
+
+.freccia_sx{
+	width: 15%;
+}
+
+.galleria{
+	width: 70%;
+	height:100%;
+
+}
+
+.menu{
+	height: 70px;
+	width: 750px;
+	padding-left: 0px;
+	background-color:pink
+}
+
+ul#lista{
+	margin-top: 0px;
+	margin-bottom: 2px;
+}
+
+ul#lista li{
+	float:left;
+	list-style:none;
+	font-size: 20px;
+	padding: 0 30px;
+	
+}
+
+.content-menu{
+	height: 30px;
+	padding-top: 24px;
+	padding-left: 0px;
+		background-color: pink;
+	display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-left:0px;
+}
+
+.information-div, .information-div1{
+	margin-top: 2px;
+ 	width: 100%;
+ 	height: 700px;
+ 	border: 2px solid pink;
+ 	border-radius: 5px;
+	
+}
+
+.information-content, .information-content1{
+	background-color: white;
+	height: 100%;
+}
+
+.descrizione_image{
+	
+	height: 100%;
+	width: 38%;
+	padding-top: 2%;
+	padding-left: 40%;
+}
+
+.descrizione{
+	height: 80%;
+	width: 60%;
+	margin-left:-70%;
+	float: left;
+	text-align:center;
+	line-height:40px;
+	
+}
+
+.descrizione h2{
+	color: pink;
+	font-size:52px;
+	
+}
+
+.immagine{
+	margin-top:10px;
+	margin-left:100px;
+	float: left;
+	height: 80%;
+	width: 60%;
+}
+
+.immagine1{
+	margin-top:10px;
+	margin-left:-15%;
+	float: left;
+	height: 80%;
+	width: 60%;
+}
+
+.descrizione_image1{
+	margin-top: 3%;
+	height: 80%;
+	width: 60%;
+	padding-top: 2%;
+	padding-left: 20%;
+}
+
+.descrizione1{
+	height: 80%;
+	width: 60%;
+	margin-left:45%;
+	margin-top:-45%;
+	float: left;
+	text-align:center;
+	line-height:40px;
+}
+
+.descrizione1 h2{
+	color: pink;
+	font-size:52px;
+}
+
+.slider{
+    width: 100%;
+    height: 700px;
+    margin-top:20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 500%;
+    height: 700px;
+    display: flex;
+    margin-top:20px;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 2s;
+    margin-top:20px;
+    
+}
+
+.slide img{
+    width: 100%;
+    height: 700px;
+     margin-top:30px;
+}
+
+
+
+.navigation-manual{
+  position: absolute;
+  width: 70%;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid #D9B9B2;
+    padding: 5px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top:-11px;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+
+.manual-btn:hover{
+    background: #D9B9B2
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+
+.navigtion-auto{
+    position: absolute;
+    display: flex;
+    width: 700px;
+    justify-content: center;
+    margin-top: 460;
+}
+
+.navigation-auto div{
+    border: 2px solid #D9B9B2;
+    padding: 5px;
+   border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #D9B9B2;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #D9B9B2;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #D9B9B2;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #D9B9B2;
+}
+
+.footer{
+	width: 100%;
+	float: left;
+}
