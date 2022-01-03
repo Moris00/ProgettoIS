@@ -90,6 +90,7 @@
 							 <%
 							 	UserBean user = (UserBean) session.getAttribute("profilo");
 							 	if(user != null){
+							 		System.out.println(user.getRuolo());
 								 	if(user.getRuolo().equals("admin") || user.getRuolo().equals("rivenditore")){
 							 	%>
 								<button onclick="location.href='/Avenue814/PaginaShop/aggiungi_prodotti.jsp'">Aggiungi prodotto</button>
