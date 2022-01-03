@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1" import="avenue814.model.*" %>
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 <meta charset="ISO-8859-1">
 <title></title>
 <style><%@include file="../CSS/header.css" %></style>

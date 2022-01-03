@@ -8,7 +8,7 @@
     	}
 
     	ArrayList<?> ordini = (ArrayList<?>) sessionUser.getAttribute("ordini");
-    	
+    
     	
     	%>
 <!DOCTYPE html>

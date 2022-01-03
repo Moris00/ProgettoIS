@@ -13,7 +13,7 @@
 	<body>
 		
 		<div class="header1">
-				<%@include file="../PaginaAddon/header.jsp"%>
+			<%@include file="../PaginaAddon/header.jsp"%>
 		</div>
 		
 		<div class="tipi">
