@@ -1,5 +1,6 @@
 package avenue814.testSuite.model;
 
+import org.junit.platform.suite.*;
 import org.junit.platform.suite.api.*;
 
 

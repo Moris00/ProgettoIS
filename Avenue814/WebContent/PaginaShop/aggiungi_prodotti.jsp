@@ -44,7 +44,7 @@
 								</optgroup>
 							</select>
 							<div id="descrizione"><textarea rows="10%" cols="20%" name="descrizione"></textarea></div>
-							<input type="file" name="foto" required>
+							<input type="file" name="foto">
 							<p id="error"><%if(sessionUser.getAttribute("error") != null){%><%=(String) sessionUser.getAttribute("error")%> <%} %></p>
 							<input type="submit" value="Aggiungi">
 					

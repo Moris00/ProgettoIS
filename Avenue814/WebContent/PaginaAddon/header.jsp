@@ -60,7 +60,7 @@
                                               
                                               <div id="menu" style="display:none;">
                                                  <p><a href="/Avenue813/PaginaAutenticazione/datipersonali.jsp">Dati Personali</a></p>
-                                                 <p><a href="/Avenue813/PaginaAutenticazione/mieiordini.jsp">I miei ordini</a></p>
+                                                 <p><a href="/Avenue814/viewOrdini">I miei ordini</a></p>
                                                  <p><a href="/Avenue813/PaginaContatti/supportoemail.jsp">Contatti</a></p>
                                                  <p><a href="https://www.instagram.com/the_avenue813/?hl=it">Social</a></p>
                                               </div>
@@ -106,7 +106,7 @@
             <li><a href="/Avenue813/PaginaAutenticazione/login.jsp">LOGIN</a></li>
             <%}else{ %>
             <li><a href="/Avenue813/PaginaAutenticazione/datipersonali.jsp"><%=((UserBean) userSession.getAttribute("profilo")).getUsername() %></a></li>
-            <li><a href="/Avenue813/PaginaAutenticazione/mieiordini.jsp">I MIEI ORDINI</a></li>
+            <li><a href="/Avenue814/PaginaAutenticazione/mieiordini.jsp">I MIEI ORDINI</a></li>
             <li><a href="/Avenue813/PaginaContatti/supportoemail.jsp">CONTATTI</a></li>
             <li><a href="/Avenue814/PaginaShop/carrello.jsp">CARRELLO</a></li>
             <li><a href="/Avenue814/logout">LOGOUT</a></li>

@@ -12,5 +12,18 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-8.0.25.jar"/>
+<<<<<<< HEAD
+=======
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/dbunit-2.7.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/h2-2.0.204.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/junit-jupiter-5.8.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mockito-core-4.0.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/objenesis-3.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/byte-buddy-1.11.19.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/junit-platform-suite-1.8.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/maven-compiler-plugin-3.8.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-api-1.7.25.jar"/>
+>>>>>>> refs/remotes/origin/main
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -46,7 +47,8 @@ public class AggiungiProdottoServlet extends HttpServlet{
 		
 		if(user == null) {/*Eccezione*/
 			request.setAttribute("errore", "Non hai accesso a questa pagina");
-			response.sendRedirect("/Avenue814/PaginaAddon/errorepage.jsp");
+			RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/PaginaAddon/errorpage.jsp");
+			dispatcher.forward(request, response);
 		}
 		
 		

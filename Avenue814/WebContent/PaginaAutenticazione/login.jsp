@@ -22,7 +22,7 @@
 		<br>
 		          <h1 align="center">LOGIN</h1>
 			
-			<form name="loginForm" class="form1" action="${pageContext.request.contextPath}/login" method="POST">
+			<form name="loginForm" class="form1" action="/Avenue814/login" method="POST">
 			<fieldset class="fields"> 
   		        <legend>Inserisci i tuoi dati</legend> 
 				<div class="login-content">

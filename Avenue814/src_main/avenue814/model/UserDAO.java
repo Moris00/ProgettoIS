@@ -41,8 +41,8 @@ public class UserDAO {
 						rs.getString("cognome"),
 						rs.getString("username"),
 						rs.getString("email"),
-						rs.getString("ruolo"),
-						rs.getString("username"));
+						rs.getString("passw"),
+						rs.getString("ruolo"));
 			
 		}
 		
