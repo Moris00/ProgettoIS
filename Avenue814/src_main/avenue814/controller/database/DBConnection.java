@@ -16,8 +16,8 @@ public class DBConnection {
 	
 	static {
 		String url = "jdbc:mysql://localhost:3306/Avenue814";
-		String user = "admin";
-		String password = "Avenue814";
+		String user = "root";
+		String password = "ciaone123";
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
