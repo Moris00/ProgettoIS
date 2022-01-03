@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="avenue814.model.*" %>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -7,6 +7,7 @@
 <title></title>
 <style><%@include file="../CSS/header.css" %></style>
 <style><%@include file="../CSS/mobile.css"%></style>
+
 <style>
 .selected{
  color: white;
@@ -25,6 +26,7 @@
 </script>
 </head>
 <body>
+<%@page import="avenue814.model.*"%>
 	<%
 		HttpSession userSession = request.getSession();
 	%>
