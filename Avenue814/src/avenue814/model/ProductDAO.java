@@ -121,9 +121,10 @@ public class ProductDAO {
 	
 	public ProductBean retrieveProductByName(String name) throws SQLException, ClassNotFoundException{
 		
-		String sql = "SELECT * FROM Prodotti WHERE Prodotti.nome = '"+name+"';";
+		String sql = "SELECT * FROM Prodotti WHERE Prodotti.nome LIKE ?;";
 		logger.info("Ricerca del prodotto "+name+" in corso...");
 		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(0, name);
 		ResultSet rs = ps.executeQuery();
 		
 		while(rs.next()) {

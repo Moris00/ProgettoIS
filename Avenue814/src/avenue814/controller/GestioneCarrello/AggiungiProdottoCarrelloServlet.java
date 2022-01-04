@@ -31,7 +31,7 @@ public class AggiungiProdottoCarrelloServlet extends HttpServlet {
 		doPost(request, response);
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		logger.info("Aggiunta del prodotto al carrello in corso...");
 		HttpSession userSession = request.getSession();	
 		UserBean user = (UserBean) userSession.getAttribute("profilo");

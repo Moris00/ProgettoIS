@@ -25,7 +25,7 @@ public class UserDAOTest extends DataSourceBasedDBTestCase{
 	@Override
 	protected DataSource getDataSource() {
 		JdbcDataSource dataSource = new JdbcDataSource();
-		dataSource.setURL("jdbc:h2:men:test;DB_CLOSE_DELAY=-1;init=runscript from 'classpath:/DB_test/schema.sql'");
+		dataSource.setURL("jdbc:h2:C:\\Users\\Utente\\git\\ProgettoIS___\\Avenue814\\DB_test\\schema.sql");
 		dataSource.setUrl("sa");
 		dataSource.setPassword("");
 		return dataSource;
@@ -33,7 +33,7 @@ public class UserDAOTest extends DataSourceBasedDBTestCase{
 
 	@Override
 	protected IDataSet getDataSet() throws Exception {
-		return new FlatXmlDataSetBuilder().build(this.getClass().getClassLoader().getResourceAsStream("C:\\Users\\Utente\\git\\ProgettoIS_Avenue814\\Avenue814\\DB_test\\init\\init.xml"));
+		return new FlatXmlDataSetBuilder().build(this.getClass().getClassLoader().getResourceAsStream("DB_test\\init\\init.xml"));
 	}
 	
 	protected DatabaseOperation getSetUpOperation() {return DatabaseOperation.REFRESH;}
