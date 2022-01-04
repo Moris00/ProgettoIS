@@ -145,7 +145,7 @@
 									
 								<%}} %>
 								<div class="image_product">
-									<img src="<%=bean.getPath_image() %>" width=150px height="150px" onerror="this.src='/Avenue813/immagini_prodotti/error.png'">
+									<img src="<%=bean.getPath_image() %>" width=150px height="150px" onerror="this.src='/Avenue814/IMAGES_PRODOTTI/error.png'">
 								</div>
 								<div class="buy_price">
 									<div class="product_name">
@@ -181,22 +181,22 @@
 				<div class="carrello">
 						<div class="content_carrello">
 							<div class="item">
-								<img src="/Avenue813/immagini/Logo-Nike-Swoosh.png" alt="primaimmagine" width=100% height=100%>
+								<img src="/Avenue814/IMAGES/Logo-Nike-Swoosh.png" alt="primaimmagine" width=100% height=100%>
 							</div>
 							<div class="item">
-								<img src="/Avenue813/immagini/ADIDAS.jpeg" alt="primaimmagine" width=100% height=100%>
+								<img src="/Avenue814/IMAGES/ADIDAS.jpeg" alt="primaimmagine" width=100% height=100%>
 							</div>
 							<div class="item">
-								<img src="/Avenue813/immagini/PUMA.jpeg" alt="primaimmagine" width=100% height=100%>
+								<img src="/Avenue814/IMAGES/PUMA.jpeg" alt="primaimmagine" width=100% height=100%>
 							</div>
 							<div class="item">
-								<img src="/Avenue813/immagini/SUPREME.jpeg" alt="primaimmagine" width=100% height=100%>
+								<img src="/Avenue814/IMAGES/SUPREME.jpeg" alt="primaimmagine" width=100% height=100%>
 							</div>
 							<div class="item">
-								<img src="/Avenue813/immagini/BULLS.jpeg" alt="primaimmagine" width=100% height=100%>
+								<img src="/Avenue814/IMAGES/BULLS.jpeg" alt="primaimmagine" width=100% height=100%>
 							</div>
 							<div class="item">
-								<img src="/Avenue813/immagini/LOGHI.jpeg" alt="primaimmagine" width=100% height=100%>
+								<img src="/Avenue814/IMAGES/LOGHI.jpeg" alt="primaimmagine" width=100% height=100%>
 							</div>
 						</div>
 					

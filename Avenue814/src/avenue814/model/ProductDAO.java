@@ -124,7 +124,7 @@ public class ProductDAO {
 		String sql = "SELECT * FROM Prodotti WHERE Prodotti.nome LIKE ?;";
 		logger.info("Ricerca del prodotto "+name+" in corso...");
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setString(0, name);
+		ps.setString(1, name);
 		ResultSet rs = ps.executeQuery();
 		
 		while(rs.next()) {

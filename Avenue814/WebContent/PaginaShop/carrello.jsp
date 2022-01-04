@@ -75,10 +75,10 @@
 							<div class="method_pagamento">
 							
 								<ul>
-									<li><input type="radio" name="metodo" value="Visa" id="visa" onclick=" selectMethod()"><img src="/Avenue813/immagini/visa.png"></li>
-									<li><input type="radio" name="metodo" value="Mastercard" onclick=" selectMethod()"><img src="/Avenue813/immagini/mastercard.png"></li>
-									<li><input type="radio" name="metodo" value="American" onclick=" selectMethod()"><img src="/Avenue813/immagini/american.png"></li>
-									<li><input type="radio" name="metodo" value="Contrassegno" onclick=" selectMethod()"><img src="/Avenue813/immagini/contrassegno.png"></li>
+									<li><input type="radio" name="metodo" value="Visa" id="visa" onclick=" selectMethod()"><img src="/Avenue814/IMAGES/visa.png"></li>
+									<li><input type="radio" name="metodo" value="Mastercard" onclick=" selectMethod()"><img src="/Avenue814/IMAGES/mastercard.png"></li>
+									<li><input type="radio" name="metodo" value="American" onclick=" selectMethod()"><img src="/Avenue814/IMAGES/american.png"></li>
+									<li><input type="radio" name="metodo" value="Contrassegno" onclick=" selectMethod()"><img src="/Avenue814/IMAGES/contrassegno.png"></li>
 								</ul>
 							
 							</div>
