@@ -21,7 +21,7 @@ public class LogoutServlet extends HttpServlet{
 		super();
 	}
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession userSession = request.getSession();
 		userSession.setAttribute("profilo", null);
 		logger.info("Logout in corso...");

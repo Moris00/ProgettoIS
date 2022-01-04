@@ -72,7 +72,7 @@ public class UserDAO {
 		
 	}
 	
-	public void addNewUser(UserBean user) throws SQLException {
+	public boolean addNewUser(UserBean user) throws SQLException {
 		logger.info("Inserimento del nuovo utente al DS, l'account: "+user.getEmail());
 		
 		String sql = "INSERT INTO Utente (email, passw, nome, cognome, username, ruolo) VALUES(?,?,?,?,?,?)";
@@ -91,5 +91,7 @@ public class UserDAO {
 		
 		logger.info("L'account "+user.getEmail()+" aggiunto");
 		ps.close();
+		
+		return true;
 	}
 }

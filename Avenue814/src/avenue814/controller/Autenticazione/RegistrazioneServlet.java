@@ -28,14 +28,10 @@ public class RegistrazioneServlet extends HttpServlet {
 		doPost(request, response);
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
-		if(request.getSession().getAttribute("profilo") != null) {
-			request.setAttribute("errore", "Non hai accesso a questa pagina");
-			response.sendRedirect("/Avenue814/PaginaAddon/errorpage.jsp");
-		}
 		
-		DataSource ds = (DataSource) getServletContext().getAttribute("DataSource");
+		
 		
 		
 		UserDAO userModel = new UserDAO();

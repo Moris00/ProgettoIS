@@ -49,11 +49,13 @@ public class LoginServlet extends HttpServlet {
 				
 				
 				
-				
+				request.setAttribute("errorLogin", null);
 				RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/PaginaHome/home.jsp");
 				dispatcher.forward(request, response);
 			}else {
-				throw new Exception();
+				request.setAttribute("errorLogin", "Errato login!");
+				RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/PaginaAutenticazione/login.jsp");
+				dispatcher.forward(request, response);
 			}
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
